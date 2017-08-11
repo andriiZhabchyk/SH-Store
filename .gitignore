@@ -1,5 +1,5 @@
 # IntellijIdea files
-.idea/
+/.idea/*
 
 
 # NPM dependecy
@@ -37,12 +37,13 @@ bower_components
 .lock-wscript
 
 # Compiled binary addons (http://nodejs.org/api/addons.html)
-build/
-/build/*
+!/public/build/
+!/public/build/*
 
 
 # Dependency directories
-node_modules/
+public/node_modules/*
+server/node_modules/*
 jspm_packages/
 
 # Typescript v1 declaration files
@@ -65,3 +66,5 @@ typings/
 
 # dotenv environment variables file
 .env
+
+server/config/*
