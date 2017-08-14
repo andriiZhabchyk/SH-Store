@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
 </head>
-<body>
+<body onload="clothing()">
 <!-- Header Part Starts Here -->
 <div class="header">
     <div class="container">
@@ -68,7 +68,7 @@
                 <h3 class="c-head">Coats</h3>
                 <small><a href="#">Show More</a></small>
                 <div class="coat-row">
-                    <div class="coat-column">
+                   <!-- <div class="coat-column">
                         <a href="single.html">
                             <img src="../img/men1.jpg" class="img-responsive" alt="">
                             <div class="prod-desc"><h4>Double-Layered Top</h4>
@@ -109,10 +109,10 @@
                             <div class="info"><a href="single.html">View</a></div>
                         </div>
                     </div>
-                    <div class="clearfix"></div>
+                    <div class="clearfix"></div>-->
                 </div>
             </div>
-            <div class="coats">
+            <!--<div class="coats">
                 <h3 class="c-head">Outerwear</h3>
                 <small><a href="#">Show More</a></small>
                 <div class="coat-row">
@@ -207,7 +207,7 @@
                     </div>
                     <div class="clearfix"></div>
                 </div>
-            </div>
+            </div>-->
             <div class="look">
                 <h3>Check our lookbook</h3>
             </div>
@@ -270,6 +270,21 @@
         </div>
     </section>
 </div>
+<script id="item-template" type="text/x-handlebars-template">
+    {{#each otherWear}}
+        <div class="coat-column">
+            <a href="single.html">
+                <img src={{images[0]}} class="img-responsive" alt="">
+                <div class="prod-desc"><h4>{{title}}</h4>
+                    <small>{{price}}</small>
+                </div>
+            </a>
+            <div class="mask">
+                <div class="info"><a href="single.html">View</a></div>
+            </div>
+        </div>
+    {{/each}}
+</script>
 <script type="text/javascript" src="../../build/scripts.min.js"></script>
 </body>
 </html>
