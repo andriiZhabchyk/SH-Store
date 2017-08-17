@@ -15,6 +15,8 @@ let path = {
     styles: {
         src: [
             './node_modules/bootstrap/dist/css/bootstrap.css',
+            './node_modules/jquery-ui-slider/jquery-ui.css',
+            './node_modules/font-awesome/css/font-awesome.css',
             './assets/styles/index.less'
         ],
         dependencies: [
@@ -26,6 +28,7 @@ let path = {
     scripts: {
         src: [
             './node_modules/jquery/dist/jquery.js',
+            './node_modules/jquery-ui-slider/jquery-ui.js',
             './node_modules/bootstrap/dist/js/bootstrap.js',
             './assets/js/*.js'
         ],
