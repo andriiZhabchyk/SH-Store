@@ -1,0 +1,159 @@
+
+.navigation{
+  float:left;
+  width:60%;
+
+
+}
+.navigation-bar {
+  padding-bottom:1em;
+}
+.logo{
+  float:left;
+  width:15%
+}
+.logo a{
+  text-decoration:none;
+  background:#222222;
+  padding:10px;
+  font-weight:400;
+  font-size:1em;
+  color:#fff;
+}
+.navig{
+  float:left;
+  width:70%;
+  position: relative;
+}
+.navig ul li{
+  display: inline-block;
+  margin:0 15px;
+  height:30px;
+  line-height:30px;
+}
+.navig ul li .navig-a{
+  text-decoration:none;
+  font-size:1em;
+  font-weight:400;
+  color:#303030;
+  //transition:0.5s all;
+  //-webkit-transition:0.5s all;
+  //-o-transition:0.5s all;
+  //-moz-transition:0.5s all;
+  //-ms-transition:0.5s all;
+  text-transform: uppercase;
+}
+.navig ul li .navig-a:hover, ul.user li .navig-a:hover{
+  zoom:1;
+  color:#f68236;
+}
+.navigation-right{
+  float:right;
+
+}
+ul.user{
+  padding:0
+}
+ul.user li{
+  display: inline-block;
+  line-height:30px;
+  vertical-align:bottom;
+  height:30px;
+  &:nth-child(1) {
+  }
+  &:nth-child(2) {
+    margin:0 10px 0 0;
+  }
+  &:nth-child(3) {
+    margin:0;
+  }
+}
+
+
+.dropdown-menu-women {
+  padding:10px;
+  position: absolute;
+  min-width: 50%;
+  top: 100%;
+  left:0;
+  visibility: hidden;
+  opacity: 0;
+  //transition: .5s;
+
+}
+
+
+
+.navig li&:hover {
+  .dropdown-menu-women{
+    visibility: visible;
+    opacity: 1;
+    background-color: white;
+    z-index:5;
+
+  }
+}
+
+
+.navig li&:hover .dropdown-menu-women {
+  .item {
+    color:black;
+    text-decoration:none;
+    display: block;
+    &:hover{
+      color:red;
+      text-decoration:none;
+      display: block;
+    }
+  }
+}
+
+
+
+.img-nav-women {
+  background-image: url("/assets/img/gallery1.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width:250px;
+  height:250px;
+  padding:10px;
+}
+
+.img-nav-men {
+  background-image: url("/assets/img/men-nav.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width:250px;
+  height:250px;
+  padding:10px;
+}
+
+
+.man-nav {
+  float: left;
+  padding:15px;
+}
+
+ul.user li span{
+  width:22px;
+  height:30px;
+  background:url(/assets/img/user-icons.png)no-repeat 0px 0px;
+  display: inline-block;
+  vertical-align: middle;
+}
+ul.user li .bascket{
+  background:url(/assets/img/user-icons.png)no-repeat -20px 0px;
+  margin-right: 5px;
+}
+ul.user li a{
+  text-decoration:none;
+  font-size:1em;
+  font-weight:400;
+  color:#303030;
+  vertical-align: top;
+  -webkit-transition:0.5s all;
+  -o-transition:0.5s all;
+  -moz-transition:0.5s all;
+  -ms-transition:0.5s all;
+
+}
