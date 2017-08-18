@@ -9,7 +9,7 @@
     "highlight": "^0.2.4",
     "jquery-ui-dist": "^1.12.1",
     "slick-carousel": "^1.7.1",
-    "typeahead": "^0.2.2"
+    "typeahead": "^0.2.2",
     "font-awesome": "^4.7.0",
     "jquery-ui-slider": "^1.12.1"
   },
