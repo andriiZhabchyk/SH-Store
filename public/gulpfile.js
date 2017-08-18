@@ -18,7 +18,7 @@ let path = {
             './node_modules/slick-carousel/slick/slick.less',
             './node_modules/slick-carousel/slick/slick-theme.less',
             // './node_modules/highlight/lib/vendor/highlight.js/styles/default.css',
-            // './node_modules/jquery-ui/jquery-ui.css'
+            // './node_modules/jquery-ui/jquery-ui.css',
             './node_modules/jquery-ui-slider/jquery-ui.css',
             './node_modules/font-awesome/css/font-awesome.css',
             './assets/styles/index.less'
