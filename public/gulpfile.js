@@ -17,10 +17,11 @@ let path = {
             './node_modules/bootstrap/dist/css/bootstrap.css',
             './node_modules/slick-carousel/slick/slick.less',
             './node_modules/slick-carousel/slick/slick-theme.less',
-            // './node_modules/highlight/lib/vendor/highlight.js/styles/default.css',
-            // './node_modules/jquery-ui/jquery-ui.css',
+            './node_modules/highlight/lib/vendor/highlight.js/styles/default.css',
+            './node_modules/jquery-ui/jquery-ui.css',
             './node_modules/jquery-ui-slider/jquery-ui.css',
             './node_modules/font-awesome/css/font-awesome.css',
+            './node_modules/jquery-autocomplete/jquery.autocomplete.css',
             './assets/styles/index.less'
         ],
         dependencies: [
@@ -36,9 +37,10 @@ let path = {
             './node_modules/bootstrap/dist/js/bootstrap.js',
             './node_modules/slick-carousel/slick/slick.js',
             // './node_modules/typeahead/typeahead.js',
-            // './node_modules/jquery-ui/jquery-ui.js',
-            // './node_modules/highlight/lib/vendor/highlight.js/highlight.pack.js',
+            './node_modules/jquery-ui/jquery-ui.js',
+            './node_modules/highlight/lib/vendor/highlight.js/highlight.pack.js',
             // './node_modules/autocomplete/index.js',
+            './node_modules/jquery-autocomplete/jquery.autocomplete.js',
             './assets/js/*.js'
         ],
         name: 'scripts',
