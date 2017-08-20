@@ -13,3 +13,77 @@ function searchToggle(obj, evt){
 }
 
 
+// $(function() {
+//     let availableTags = [
+//         "Woman",
+//         "Men",
+//         "Kids",
+//         "Comming Soon",
+//         "About"
+//     ];
+//     $( "#tags" ).autocomplete({
+//         source: availableTags
+//     });
+// });
+//
+//
+//     $(document).ready(function(){
+//         $('#submit').click(function(){
+//             let term = "#";
+//             let tags = "";
+//             // $('body').removeHighlight();
+//             if($('#tags').val() != "")
+//             {
+//                 term += $("#tags").val();
+//                 tags = $('#tags').attr('value');
+//             }
+//             if($('#tags').val() == ""){
+//             $("p.results").fadeIn().append("Enter search query in field above");
+//             return false;
+//         }
+//             // $('a').highlight(tags);
+//             // location.href = term.toLowerCase();
+//         });
+//     });
+
+
+
+
+// $(function() {
+//     var availableTags = [
+//         "ActionScript",
+//         "BASIC",
+//         "C++",
+//         "Delphi",
+//         "Java",
+//         "JavaScript",
+//         "Pascal",
+//         "PHP",
+//         "Python",
+//         "Ruby",
+//         "Visual Fortran"
+//     ];
+//     $( "#tags" ).autocomplete({
+//         source: availableTags
+//     });
+// });
+//
+//     $(document).ready(function(){
+//         $('#submit').click(function(){
+//             var term = "#";
+//             var tags = "";
+//             $('body').removeHighlight();
+//             if($('#tags').val() != "")
+//             {
+//                 term += $("#tags").val();
+//                 tags = $('#tags').attr('value');
+//             }
+//             if($('#tags').val() == ""){
+//             $("p.results").fadeIn().append("Enter search query in field above");
+//             return false;
+//         }
+//             $('h3').highlight(tags);
+//             location.href = term.toLowerCase();
+//         });
+//     });
+

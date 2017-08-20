@@ -6,12 +6,14 @@
   "dependencies": {
     "autocomplete": "0.0.1",
     "bootstrap": "^3.3.7",
-    "highlight": "^0.2.4",
-    "jquery-ui-dist": "^1.12.1",
-    "slick-carousel": "^1.7.1",
-    "typeahead": "^0.2.2",
     "font-awesome": "^4.7.0",
-    "jquery-ui-slider": "^1.12.1"
+    "highlight": "^0.2.4",
+    "jquery-autocomplete": "^1.2.1",
+    "jquery-ui": "^1.12.1",
+    "jquery-ui-dist": "^1.12.1",
+    "jquery-ui-slider": "^1.12.1",
+    "slick-carousel": "^1.7.1",
+    "typeahead": "^0.2.2"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
