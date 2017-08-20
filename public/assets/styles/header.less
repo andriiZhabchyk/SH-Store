@@ -22,15 +22,22 @@
 }
 .logo{
   float:left;
-  width:15%
+  width:15%;
+
 }
 .logo a{
   text-decoration:none;
-  background:#222222;
-  padding:10px;
+  //background:#222222;
+  text-shadow: 1px 1px 1px silver,
+  -1px 1px 1px silver;
+  padding:20px;
   font-weight:400;
-  font-size:1em;
-  color:#fff;
+  //font-size:1.5em;
+  font-size:25px;
+  color:#f68236;
+  -webkit-box-shadow:0 1px 4px #f68236, 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  -moz-box-shadow:0 1px 4px #f68236, 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  box-shadow:0 1px 4px #f68236, 0 0 40px rgba(0, 0, 0, 0.1) inset;
 }
 .navig{
   float:left;
@@ -48,16 +55,17 @@
   font-size:1em;
   font-weight:400;
   color:#303030;
-  //transition:0.5s all;
-  //-webkit-transition:0.5s all;
-  //-o-transition:0.5s all;
-  //-moz-transition:0.5s all;
-  //-ms-transition:0.5s all;
+transition:0.5s all;
+  -webkit-transition:0.5s all;
+  -o-transition:0.5s all;
+  -moz-transition:0.5s all;
+  -ms-transition:0.5s all;
   text-transform: uppercase;
 }
 .navig ul li .navig-a:hover, ul.user li .navig-a:hover{
-  zoom:1;
   color:#f68236;
+
+
 }
 .navigation-right{
   float:right;
@@ -81,15 +89,23 @@ ul.user li{
 
 
 .dropdown-menu-women {
-  padding:10px;
+  padding:15px;
   position: absolute;
   min-width: 50%;
   top: 100%;
   left:0;
   visibility: hidden;
   opacity: 0;
-  //transition: .5s;
-
+  //-webkit-box-shadow: 0 10px 6px -6px #777;
+  //-moz-box-shadow: 0 10px 6px -6px #777;
+  //box-shadow: 0 10px 6px -6px #777;
+  -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  //transition: .3s;
+  h4 {
+    color:#f68236;
+  }
 }
 
 
@@ -110,8 +126,9 @@ ul.user li{
     color:black;
     text-decoration:none;
     display: block;
+    transition: .3s;
     &:hover{
-      color:red;
+      color:#f68236;
       text-decoration:none;
       display: block;
     }
@@ -161,9 +178,9 @@ ul.user li a{
   font-weight:400;
   color:#303030;
   vertical-align: top;
-  -webkit-transition:0.5s all;
-  -o-transition:0.5s all;
-  -moz-transition:0.5s all;
-  -ms-transition:0.5s all;
+  //-webkit-transition:0.5s all;
+  //-o-transition:0.5s all;
+  //-moz-transition:0.5s all;
+  //-ms-transition:0.5s all;
 
 }
