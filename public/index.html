@@ -9,6 +9,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="node_modules/font-awesome/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="assets/autocomplete/easy-autocomplete.css">
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="assets/autocomplete/jquery.easy-autocomplete.js"></script>
 </head>
 <body>
 <div class="header">
@@ -64,20 +67,21 @@
                     <li>
                         <div class="search-wrapper">
                             <div class="input-holder">
-                                <input id="tags" type="text" class="search-input" placeholder="Type to search" />
+                                <input id="input-search" type="text" class="search-input" placeholder="Type to search" />
                                 <button id="submit"  class="search-icon"  onclick="searchToggle(this, event);"><div></div></button>
                             </div>
                             <div class="close" onclick="searchToggle(this, event);"></div>
                         </div>
                     </li>
-                    <li>
-                        <span></span><a href="assets/pages/login.html">Log In</a>
+                    <li class="log-in">
+                        <a href="assets/pages/login.html">Log In</a>
                     </li>
                     <li>
-                    <span class="bascket"></span><a href="assets/pages/bascket.html">Basket(0)</a>
+                        <a href="assets/pages/bascket.html">Basket(0)</a>
                     </li>
                 </ul>
             </div>
+
             <div class="clearfix"></div>
         </div>
     </div>
@@ -288,6 +292,25 @@
         </div>
     </div>
 </div>
+<script>
+    //autocomplete
+
+    let options = {
+        url: "assets/data-json/data-autocomplete.json",
+
+        getValue: "name",
+
+        list: {
+            match: {
+                enabled: true
+            },
+            maxNumberOfElements: 4
+            }
+    };
+
+    $("#input-search").easyAutocomplete(options);
+
+</script>
 <script type="text/javascript" src="build/scripts.min.js"></script>
 </body>
 </html>
