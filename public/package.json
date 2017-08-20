@@ -4,16 +4,13 @@
   "description": "",
   "main": "Gulpfile.js",
   "dependencies": {
-    "autocomplete": "0.0.1",
     "bootstrap": "^3.3.7",
+    "easy-autocomplete": "^1.3.5",
     "font-awesome": "^4.7.0",
-    "highlight": "^0.2.4",
-    "jquery-autocomplete": "^1.2.1",
     "jquery-ui": "^1.12.1",
     "jquery-ui-dist": "^1.12.1",
     "jquery-ui-slider": "^1.12.1",
-    "slick-carousel": "^1.7.1",
-    "typeahead": "^0.2.2"
+    "slick-carousel": "^1.7.1"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
