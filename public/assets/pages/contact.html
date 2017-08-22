@@ -3,55 +3,79 @@
 <head>
     <title>Hazy Shade | Contact</title>
     <link rel="stylesheet" href="../../build/style.css">
-    /*Custom Theme files*/
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../../node_modules/font-awesome/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
 </head>
 <body>
-<!-- Header Part Starts Here -->
 <div class="header">
-    <div class="container">
-        <div id="demo_top_wrapper">
-            <div id="sticky_navigation_wrapper">
-                <div id="sticky_navigation">
-                    <div class="demo_container navigation-bar">
-                        <div class="navigation">
-                            <div class="logo"><a href="../../index.html">SH</a></div>
-                            <span class="menu"></span>
-                            <div class="navig">
-                                <ul>
-                                    <li><a href="women.html">Woman</a></li>
-                                    <li><a href="men.html">Men</a></li>
-                                    <li><a href="#">Kids</a></li>
-                                    <li><a href="#">Comming Soon</a></li>
-                                    <li><a href="about.html">About</a></li>
-                                </ul>
+    <div id="demo_top_wrapper">
+        <div id="sticky_navigation">
+            <div class="navigation">
+                <div class="logo"><a href="../../index.html">SH</a></div>
+                <span class="menu"></span>
+                <div class="navig">
+                    <ul>
+                        <li>
+                            <a class="navig-a" href="../../assets/pages/women.html">Woman</a>
+                            <div class="dropdown-menu-women">
+                                <div class="row">
+                                    <div class="col-md-1">
+                                        <h4>ggggg</h4>
+                                        <a class="item" href="../../assets/pages/women.html">item</a>
+                                        <a class="item" href="../../assets/pages/women.html">item</a>
+                                        <a class="item" href="../../assets/pages/women.html">item</a>
+                                        <a class="item" href="../../assets/pages/women.html">item</a>
+                                        <a class="item" href="../../assets/pages/women.html">item</a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <a class="item" href="../../assets/pages/women.html"><div class="img-nav-women"></div></a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <a class="item" href="../../assets/pages/women.html"><div class="img-nav-women"></div></a>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="navigation-right">
-                            <ul class="user">
-                                <li>
-                                    <span></span><a href="login.html">Log In</a>
-                                </li>
-                                <li>
-                                    <span class="bascket"></span><a href="bascket.html">Basket(0)</a>
-                                </li>
-                                <li>
-                                    <button class="search"></button>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="clearfix"></div>
-                        <div class="serch">
-								<span>
-									<input type="text" placeholder="Search" required="">
-									<input type="submit" value=""/>
-								</span>
-                        </div>
-                    </div>
+                        </li>
+                        <li>
+                            <a class="navig-a" href="../../assets/pages/men.html">Men</a>
+                            <div class="dropdown-menu-women">
+                                <div class="man-nav">
+                                    <h4>ggggg</h4>
+                                    <a class="item" href="../../assets/pages/men.html">item</a>
+                                </div>
+                                <div class="man-nav">
+                                    <a class="item" href="../../assets/pages/men.html"><div class="img-nav-men"></div></a>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a class="navig-a" href="#">Kids</a></li>
+                        <li><a class="navig-a" href="#">Comming Soon</a></li>
+                        <li><a class="navig-a" href="../../assets/pages/about.html">About</a></li>
+                    </ul>
                 </div>
+                <div class="clearfix"></div>
             </div>
+            <div class="navigation-right">
+                <ul class="user">
+                    <li>
+                        <div class="search-wrapper">
+                            <div class="input-holder">
+                                <input id="tags" type="text" class="search-input" placeholder="Type to search" />
+                                <button id="submit"  class="search-icon"  onclick="searchToggle(this, event);"><div></div></button>
+                            </div>
+                            <div class="close" onclick="searchToggle(this, event);"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <span></span><a href="../../assets/pages/login.html">Log In</a>
+                    </li>
+                    <li>
+                        <span class="bascket"></span><a href="../../assets/pages/bascket.html">Basket(0)</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="clearfix"></div>
         </div>
     </div>
 </div>
@@ -106,64 +130,88 @@
             <div class="look">
                 <h3>You May Also Like</h3>
             </div>
-            <!-- Partners Starts Here --->
-            <div class="partner">
-                <ul id="flexiselDemo3">
-                    <li><img src="../img/ss1.jpg" class="img-responsive" alt=""/></li>
-                    <li><img src="../img/ss2.jpg" class="img-responsive" alt=""/></li>
-                    <li><img src="../img/ss3.jpg" class="img-responsive" alt=""/></li>
-                    <li><img src="../img/ss4.jpg" class="img-responsive" alt=""/></li>
-                    <li><img src="../img/ss5.png" class="img-responsive" alt=""/></li>
-                </ul>
-            </div>
-            <!-- Partners Ends Here --->
-            <!-- Footer Menu Starts here --->
-            <div class="footer">
-                <div class="row footer-row">
-                    <div class="col-md-3 footer-col">
-                        <h3 class="ft-title">Collection</h3>
-                        <ul class="ft-list">
-                            <li><a href="#">Woman (1725)</a></li>
-                            <li><a href="#">Men (635)</a></li>
-                            <li><a href="#">Kids (2514</a></li>
-                            <li><a href="#">Comming Soon (76)</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-3 footer-col">
-                        <h3 class="ft-title">site</h3>
-                        <ul class="ft-list  list-h">
-                            <li><a href="#">Terms of Service </a></li>
-                            <li><a href="#">Privacy Policy </a></li>
-                            <li><a href="#">Copyright Policy </a></li>
-                            <li><a href="#">Press Kit</a></li>
-                            <li><a href="#">Support</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-3 footer-col">
-                        <h3 class="ft-title">Shop</h3>
-                        <ul class="ft-list list-h">
-                            <li><a href="#">About us</a></li>
-                            <li><a href="#">Shipping Metods</a></li>
-                            <li><a href="#">Career</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-3 foot-cl">
-                        <h3 class="ft-title">social</h3>
-                        <p>Shoper is made with love in Warsaw,<br>2014 &copy; Template By <a
-                                href="http://w3layouts.com/">W3layouts</a></p>
-                        <ul class="social">
-                            <li><i class="fa"></i></li>
-                            <li><i class="tw"></i></li>
-                            <li><i class="is"></i></li>
-                        </ul>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-            <!-- Footer Menu Ends here --->
         </div>
     </section>
+</div>
+<div class="footer-container">
+    <div class="row">
+        <div class="footer-sign-up">
+            <div class="container-sign-up">
+                <div class="col-md-5">
+                    <div class="social_media_panel">
+                        <div class="follow-us">Follow us</div>
+                        <div class="links social_media">
+                            <ul class="items social_box">
+                                <li>
+                                    <a href="#"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="block_subscribe">
+                        <form action="#" method="post" id="newsletter_validate">
+                            <div class="block_content">
+                                <div class="input_box">
+                                    <input type="email" name="email" id="newsletter" placeholder="Subscribe to our newsletter" class="input_text">
+                                </div>
+                                <div class="actions">
+                                    <button type="submit" title="Subscribe" class="button_subscribe">
+                                        <span>Subscribe</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="row footer-row">
+            <div class="col-md-3 footer-col">
+                <h3 class="ft-title">Collection</h3>
+                <ul class="ft-list">
+                    <li><a href="#">Woman</a></li>
+                    <li><a href="#">Men)</a></li>
+                    <li><a href="#">Kids</a></li>
+                    <li><a href="#">Comming Soon</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 footer-col">
+                <h3 class="ft-title">site</h3>
+                <ul class="ft-list  list-h">
+                    <li><a href="#">Terms of Service </a></li>
+                    <li><a href="#">Privacy Policy </a></li>
+                    <li><a href="#">Copyright Policy </a></li>
+                    <li><a href="#">Press Kit</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 footer-col">
+                <h3 class="ft-title">Shop</h3>
+                <ul class="ft-list list-h">
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Shipping Metods</a></li>
+                    <li><a href="#">Career</a></li>
+                    <li><a href="assets/pages/contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 foot-cl">
+                <p>Shoper is made with love in Warsaw,<br>2014 &copy; Template By
+                    <a href="http://w3layouts.com/">W3layouts</a></p>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
 </div>
 <script type="text/javascript" src="../../build/scripts.min.js"></script>
 </body>
