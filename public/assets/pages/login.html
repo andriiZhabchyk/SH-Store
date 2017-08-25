@@ -93,10 +93,12 @@
                 <p>Lorem ipsum dolor sit amet enim. Etiam ullamcorp uspendisse a pellentesque.</p>
             </div>
             <div class="contact-box login-box">
-                <div class="form">
+                <form id="form_login" name="formLogin">
+                <div  class="form">
                     <small>User Name</small>
                     <div class="text">
-                        <input type="text"/>
+                        <input id="loginUserName" type="text" name="firstName"/>
+                    <span class="errorStyle" id="errorFirstName"></span>
                     </div>
                 </div>
                 <div class="form">
@@ -106,11 +108,13 @@
                     </div>
                 </div>
                 <div class="text">
-                    <input type="submit" value="Login"/>
+                    <input id="btnLogin" type="submit" value="Login"/>
                 </div>
+                </form>
                 <div class="text">
                     <a href="#">Forgot Password</a>
                 </div>
+
             </div>
             <div class="coats login-bot">
                 <h3 class="c-head">For New People</h3>
