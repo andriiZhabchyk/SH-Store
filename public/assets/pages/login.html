@@ -17,41 +17,54 @@
                 <div class="navig">
                     <ul>
                         <li>
-                            <a class="navig-a" href="../../assets/pages/women.html">Woman</a>
-                            <div class="dropdown-menu-women">
+                            <a class="navig-a" href="assets/pages/women.html">Woman</a>
+                            <div class="dropdown-nav">
                                 <div class="row">
-                                    <div class="col-md-1">
-                                        <h4>ggggg</h4>
-                                        <a class="item" href="../../assets/pages/women.html">item</a>
-                                        <a class="item" href="../../assets/pages/women.html">item</a>
-                                        <a class="item" href="../../assets/pages/women.html">item</a>
-                                        <a class="item" href="../../assets/pages/women.html">item</a>
-                                        <a class="item" href="../../assets/pages/women.html">item</a>
+                                    <div class="col-md-3">
+                                        <h3><a href="assets/pages/women_coats.html">COATS</a></h3>
+                                        <a class="item" href="assets/pages/women_coats.html"><div class="img-women-coats"></div></a>
                                     </div>
                                     <div class="col-md-3">
-                                        <a class="item" href="../../assets/pages/women.html"><div class="img-nav-women"></div></a>
+                                        <h3><a href="assets/pages/women_dresses.html">DRESSES</a></h3>
+                                        <a class="item" href="assets/pages/women_dresses.html"><div class="img-women-dresses"></div></a>
                                     </div>
                                     <div class="col-md-3">
-                                        <a class="item" href="../../assets/pages/women.html"><div class="img-nav-women"></div></a>
+                                        <h3><a href="assets/pages/women_shoes.html">SHOES</a></h3>
+                                        <a class="item" href="assets/pages/women_shoes.html"><div class="img-women-shoes"></div></a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h3><a href="assets/pages/women_tops.html">TOPS</a></h3>
+                                        <a class="item" href="assets/pages/women_tops.html"><div class="img-women-tops"></div></a>
                                     </div>
                                 </div>
                             </div>
                         </li>
                         <li>
-                            <a class="navig-a" href="../../assets/pages/men.html">Men</a>
-                            <div class="dropdown-menu-women">
-                                <div class="man-nav">
-                                    <h4>ggggg</h4>
-                                    <a class="item" href="../../assets/pages/men.html">item</a>
-                                </div>
-                                <div class="man-nav">
-                                    <a class="item" href="../../assets/pages/men.html"><div class="img-nav-men"></div></a>
+                            <a class="navig-a" href="assets/pages/men.html">Men</a>
+                            <div class="dropdown-nav">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <h3><a href="assets/pages/women_coats.html">COATS</a></h3>
+                                        <a class="item" href="assets/pages/women_coats.html"><div class="img-women-coats"></div></a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h3><a href="assets/pages/women_dresses.html">DRESSES</a></h3>
+                                        <a class="item" href="assets/pages/women_dresses.html"><div class="img-women-dresses"></div></a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h3><a href="assets/pages/women_shoes.html">SHOES</a></h3>
+                                        <a class="item" href="assets/pages/women_shoes.html"><div class="img-women-shoes"></div></a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h3><a href="assets/pages/women_tops.html">TOPS</a></h3>
+                                        <a class="item" href="assets/pages/women_tops.html"><div class="img-women-tops"></div></a>
+                                    </div>
                                 </div>
                             </div>
                         </li>
                         <li><a class="navig-a" href="#">Kids</a></li>
                         <li><a class="navig-a" href="#">Comming Soon</a></li>
-                        <li><a class="navig-a" href="../../assets/pages/about.html">About</a></li>
+                        <li><a class="navig-a" href="assets/pages/about.html">About</a></li>
                     </ul>
                 </div>
                 <div class="clearfix"></div>
@@ -94,22 +107,22 @@
             </div>
             <div class="contact-box login-box">
                 <form id="form_login" name="formLogin">
-                <div  class="form">
-                    <small>User Name</small>
-                    <div class="text">
-                        <input id="loginUserName" type="text" name="firstName"/>
-                    <span class="errorStyle" id="errorFirstName"></span>
+                    <div  class="form">
+                        <small>User Name</small><span class="errorStyle" id="errorName"></span>
+                        <div class="text">
+                            <input  id="log_inUserName" type="text" name="Name"/>
+
+                        </div>
                     </div>
-                </div>
-                <div class="form">
-                    <small>Password</small>
-                    <div class="text">
-                        <input type="password"/>
+                    <div class="form">
+                        <small>Password</small><span class="errorStyle" id="errorPassword"></span>
+                        <div class="text">
+                            <input id="log_inUserPassword" type="password"/>
+                        </div>
                     </div>
-                </div>
-                <div class="text">
-                    <input id="btnLogin" type="submit" value="Login"/>
-                </div>
+                    <div class="text">
+                        <input id="btnLogin" type="submit" value="Login"/>
+                    </div>
                 </form>
                 <div class="text">
                     <a href="#">Forgot Password</a>
@@ -179,7 +192,7 @@
                 <h3 class="ft-title">Collection</h3>
                 <ul class="ft-list">
                     <li><a href="#">Woman</a></li>
-                    <li><a href="#">Men)</a></li>
+                    <li><a href="#">Men</a></li>
                     <li><a href="#">Kids</a></li>
                     <li><a href="#">Comming Soon</a></li>
                 </ul>
@@ -200,7 +213,7 @@
                     <li><a href="#">About us</a></li>
                     <li><a href="#">Shipping Metods</a></li>
                     <li><a href="#">Career</a></li>
-                    <li><a href="assets/pages/contact.html">Contact</a></li>
+                    <li><a href="../../assets/pages/contact.html">Contact</a></li>
                 </ul>
             </div>
             <div class="col-md-3 foot-cl">

@@ -17,41 +17,54 @@
                 <div class="navig">
                     <ul>
                         <li>
-                            <a class="navig-a" href="../../assets/pages/women.html">Woman</a>
-                            <div class="dropdown-menu-women">
+                            <a class="navig-a" href="assets/pages/women.html">Woman</a>
+                            <div class="dropdown-nav">
                                 <div class="row">
-                                    <div class="col-md-1">
-                                        <h4>ggggg</h4>
-                                        <a class="item" href="../../assets/pages/women.html">item</a>
-                                        <a class="item" href="../../assets/pages/women.html">item</a>
-                                        <a class="item" href="../../assets/pages/women.html">item</a>
-                                        <a class="item" href="../../assets/pages/women.html">item</a>
-                                        <a class="item" href="../../assets/pages/women.html">item</a>
+                                    <div class="col-md-3">
+                                        <h3><a href="assets/pages/women_coats.html">COATS</a></h3>
+                                        <a class="item" href="assets/pages/women_coats.html"><div class="img-women-coats"></div></a>
                                     </div>
                                     <div class="col-md-3">
-                                        <a class="item" href="../../assets/pages/women.html"><div class="img-nav-women"></div></a>
+                                        <h3><a href="assets/pages/women_dresses.html">DRESSES</a></h3>
+                                        <a class="item" href="assets/pages/women_dresses.html"><div class="img-women-dresses"></div></a>
                                     </div>
                                     <div class="col-md-3">
-                                        <a class="item" href="../../assets/pages/women.html"><div class="img-nav-women"></div></a>
+                                        <h3><a href="assets/pages/women_shoes.html">SHOES</a></h3>
+                                        <a class="item" href="assets/pages/women_shoes.html"><div class="img-women-shoes"></div></a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h3><a href="assets/pages/women_tops.html">TOPS</a></h3>
+                                        <a class="item" href="assets/pages/women_tops.html"><div class="img-women-tops"></div></a>
                                     </div>
                                 </div>
                             </div>
                         </li>
                         <li>
-                            <a class="navig-a" href="../../assets/pages/men.html">Men</a>
-                            <div class="dropdown-menu-women">
-                                <div class="man-nav">
-                                    <h4>ggggg</h4>
-                                    <a class="item" href="../../assets/pages/men.html">item</a>
-                                </div>
-                                <div class="man-nav">
-                                    <a class="item" href="../../assets/pages/men.html"><div class="img-nav-men"></div></a>
+                            <a class="navig-a" href="assets/pages/men.html">Men</a>
+                            <div class="dropdown-nav">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <h3><a href="assets/pages/women_coats.html">COATS</a></h3>
+                                        <a class="item" href="assets/pages/women_coats.html"><div class="img-women-coats"></div></a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h3><a href="assets/pages/women_dresses.html">DRESSES</a></h3>
+                                        <a class="item" href="assets/pages/women_dresses.html"><div class="img-women-dresses"></div></a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h3><a href="assets/pages/women_shoes.html">SHOES</a></h3>
+                                        <a class="item" href="assets/pages/women_shoes.html"><div class="img-women-shoes"></div></a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h3><a href="assets/pages/women_tops.html">TOPS</a></h3>
+                                        <a class="item" href="assets/pages/women_tops.html"><div class="img-women-tops"></div></a>
+                                    </div>
                                 </div>
                             </div>
                         </li>
                         <li><a class="navig-a" href="#">Kids</a></li>
                         <li><a class="navig-a" href="#">Comming Soon</a></li>
-                        <li><a class="navig-a" href="../../assets/pages/about.html">About</a></li>
+                        <li><a class="navig-a" href="assets/pages/about.html">About</a></li>
                     </ul>
                 </div>
                 <div class="clearfix"></div>
@@ -93,20 +106,20 @@
                 <p>Lorem ipsum dolor sit amet enim. Etiam ullamcorp uspendisse a pellentesque.</p>
             </div>
             <div class="register">
-                <form>
+                <form id="form_register" name="formRegister">
                     <div class="register-top-grid">
                         <h3>PERSONAL INFORMATION</h3>
                         <div>
-                            <span>First Name<label>*</label></span>
-                            <input type="text">
+                            <span>First Name<label>*</label></span><span  id="errorFirstName"></span>
+                            <input id="registerFirstName" type="text">
                         </div>
                         <div>
-                            <span>Last Name<label>*</label></span>
-                            <input type="text">
+                            <span>Last Name<label>*</label></span><span id="errorLastName"></span>
+                            <input id="registerLastName" type="text">
                         </div>
                         <div>
-                            <span>Email Address<label>*</label></span>
-                            <input type="text">
+                            <span>Email Address<label>*</label></span><span  id="errorEmail"></span>
+                            <input id="registerEmail" type="text">
                         </div>
                         <div class="clearfix"></div>
                         <a class="news-letter" href="#">
@@ -114,25 +127,31 @@
                                 for Newsletter</label>
                         </a>
                     </div>
-                    <div class="register-bottom-grid">
+                    <div class="register-bottom-grid"><span id="errorPass"></span>
                         <h3>LOGIN INFORMATION</h3>
                         <div>
-                            <span>Password<label>*</label></span>
-                            <input type="password">
+                            <span>Password<label>*</label></span><span id="errorEmptyPass"></span>
+                            <input id="registerPass" type="password">
                         </div>
                         <div>
-                            <span>Confirm Password<label>*</label></span>
-                            <input type="password">
+                            <span>Confirm Password<label>*</label></span><span id="errorPassConfirm"></span>
+                            <input id="registerConfirmPass" type="password">
                         </div>
+                    </div>
+                    <div class="register-but">
+                        <!--<form>-->
+                        <input id="btnRegister" type="submit" value="submit">
+                        <!--<div class="clearfix"></div>-->
+                        <!--</form>-->
                     </div>
                 </form>
                 <div class="clearfix"></div>
-                <div class="register-but">
-                    <form>
-                        <input type="submit" value="submit">
-                        <div class="clearfix"></div>
-                    </form>
-                </div>
+                <!--<div class="register-but">-->
+                <!--<form>-->
+                <!--<input type="submit" value="submit">-->
+                <!--<div class="clearfix"></div>-->
+                <!--</form>-->
+                <!--</div>-->
             </div>
             <div class="look">
                 <h3>You May Also Like</h3>
