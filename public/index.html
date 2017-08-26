@@ -24,58 +24,47 @@
                     <ul>
                         <li>
                             <a class="navig-a" href="assets/pages/women.html">Woman</a>
-                            <div class="dropdown-menu-women">
+                            <div class="dropdown-nav">
                                 <div class="row">
                                     <div class="col-md-3">
-                                        <a href="assets/pages/women_coats.html"><h4>COATS</h4></a>
-                                        <a class="item" href="assets/pages/women.html">item</a>
-                                        <a class="item" href="assets/pages/women.html">item</a>
-                                        <a class="item" href="assets/pages/women.html">item</a>
-                                        <a class="item" href="assets/pages/women.html">item</a>
-                                        <a class="item" href="assets/pages/women.html">item</a>
+                                        <h3><a href="assets/pages/women_coats.html">COATS</a></h3>
+                                        <a class="item" href="assets/pages/women_coats.html"><div class="img-women-coats"></div></a>
                                     </div>
                                     <div class="col-md-3">
-                                        <a href="assets/pages/women_tops.html"><h4>TOPS</h4></a>
-                                        <a class="item" href="assets/pages/women.html">item</a>
-                                        <a class="item" href="assets/pages/women.html">item</a>
-                                        <a class="item" href="assets/pages/women.html">item</a>
-                                        <a class="item" href="assets/pages/women.html">item</a>
-                                        <a class="item" href="assets/pages/women.html">item</a>
+                                        <h3><a href="assets/pages/women_dresses.html">DRESSES</a></h3>
+                                        <a class="item" href="assets/pages/women_dresses.html"><div class="img-women-dresses"></div></a>
                                     </div>
                                     <div class="col-md-3">
-                                        <a href="assets/pages/women_dresses.html"><h4>DRESSES</h4></a>
-                                        <a class="item" href="assets/pages/women.html">item</a>
-                                        <a class="item" href="assets/pages/women.html">item</a>
-                                        <a class="item" href="assets/pages/women.html">item</a>
-                                        <a class="item" href="assets/pages/women.html">item</a>
-                                        <a class="item" href="assets/pages/women.html">item</a>
+                                        <h3><a href="assets/pages/women_shoes.html">SHOES</a></h3>
+                                        <a class="item" href="assets/pages/women_shoes.html"><div class="img-women-shoes"></div></a>
                                     </div>
                                     <div class="col-md-3">
-                                        <a href="assets/pages/women_shoes.html"><h4>SHOES</h4></a>
-                                        <a class="item" href="assets/pages/women.html">item</a>
-                                        <a class="item" href="assets/pages/women.html">item</a>
-                                        <a class="item" href="assets/pages/women.html">item</a>
-                                        <a class="item" href="assets/pages/women.html">item</a>
-                                        <a class="item" href="assets/pages/women.html">item</a>
+                                        <h3><a href="assets/pages/women_tops.html">TOPS</a></h3>
+                                        <a class="item" href="assets/pages/women_tops.html"><div class="img-women-tops"></div></a>
                                     </div>
-                                    <!--<div class="col-md-3">-->
-                                        <!--<a class="item" href="assets/pages/women.html"><div class="img-nav-women"></div></a>-->
-                                    <!--</div>-->
-                                    <!--<div class="col-md-3">-->
-                                        <!--<a class="item" href="assets/pages/women.html"><div class="img-nav-women"></div></a>-->
-                                    <!--</div>-->
                                 </div>
                             </div>
                         </li>
                         <li>
                             <a class="navig-a" href="assets/pages/men.html">Men</a>
-                            <div class="dropdown-menu-women">
-                                <div class="man-nav">
-                                    <h4>ggggg</h4>
-                                    <a class="item" href="assets/pages/men.html">item</a>
-                                </div>
-                                <div class="man-nav">
-                                    <a class="item" href="assets/pages/men.html"><div class="img-nav-men"></div></a>
+                            <div class="dropdown-nav">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <h3><a href="assets/pages/women_coats.html">COATS</a></h3>
+                                        <a class="item" href="assets/pages/women_coats.html"><div class="img-women-coats"></div></a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h3><a href="assets/pages/women_dresses.html">DRESSES</a></h3>
+                                        <a class="item" href="assets/pages/women_dresses.html"><div class="img-women-dresses"></div></a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h3><a href="assets/pages/women_shoes.html">SHOES</a></h3>
+                                        <a class="item" href="assets/pages/women_shoes.html"><div class="img-women-shoes"></div></a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h3><a href="assets/pages/women_tops.html">TOPS</a></h3>
+                                        <a class="item" href="assets/pages/women_tops.html"><div class="img-women-tops"></div></a>
+                                    </div>
                                 </div>
                             </div>
                         </li>
@@ -260,19 +249,20 @@
                 </div>
                 <div class="col-md-7">
                     <div class="block_subscribe">
-                        <form action="#" method="post" id="newsletter_validate">
+                        <form name="formNewsLetter" action="#" method="post" id="newsletter_validate">
                             <div class="block_content">
                                 <div class="input_box">
                                     <input type="email" name="email" id="newsletter" placeholder="Subscribe to our newsletter" class="input_text">
                                 </div>
                                 <div class="actions">
-                                    <button type="submit" title="Subscribe" class="button_subscribe">
+                                    <button id="btnNewsLetter" type="submit" title="Subscribe" class="button_subscribe">
                                         <span>Subscribe</span>
                                     </button>
                                 </div>
                             </div>
                         </form>
                     </div>
+                    <span id="errorEmailNewsLetter"></span>
                 </div>
             </div>
             <div class="clearfix"></div>
