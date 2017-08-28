@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+﻿<!DOCTYPE HTML>
 <html>
 <head>
     <title>Hazy Shade | Single</title>
@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="../../node_modules/font-awesome/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../../assets/autocomplete/easy-autocomplete.css">
+    <script src="../../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../../assets/autocomplete/jquery.easy-autocomplete.js"></script>
 </head>
 <body>
 <div class="header">
@@ -17,40 +20,52 @@
                 <div class="navig">
                     <ul>
                         <li>
-                            <a class="navig-a" href="../../assets/pages/women.html">Woman</a>
-                            <div class="dropdown-menu-women">
+                            <a class="navig-a" href="../../assets/pages/women.html">Women</a>
+                            <div class="dropdown-nav">
                                 <div class="row">
-                                    <div class="col-md-1">
-                                        <h4>ggggg</h4>
-                                        <a class="item" href="../../assets/pages/women.html">item</a>
-                                        <a class="item" href="../../assets/pages/women.html">item</a>
-                                        <a class="item" href="../../assets/pages/women.html">item</a>
-                                        <a class="item" href="../../assets/pages/women.html">item</a>
-                                        <a class="item" href="../../assets/pages/women.html">item</a>
+                                    <div class="col-md-3">
+                                        <h3><a href="../../assets/pages/women_coats.html">COATS</a></h3>
+                                        <a class="item" href="../../assets/pages/women_coats.html"><div class="img-women-coats"></div></a>
                                     </div>
                                     <div class="col-md-3">
-                                        <a class="item" href="../../assets/pages/women.html"><div class="img-nav-women"></div></a>
+                                        <h3><a href="../../assets/pages/women_dresses.html">DRESSES</a></h3>
+                                        <a class="item" href="../../assets/pages/women_dresses.html"><div class="img-women-dresses"></div></a>
                                     </div>
                                     <div class="col-md-3">
-                                        <a class="item" href="../../assets/pages/women.html"><div class="img-nav-women"></div></a>
+                                        <h3><a href="../../assets/pages/women_shoes.html">SHOES</a></h3>
+                                        <a class="item" href="../../assets/pages/women_shoes.html"><div class="img-women-shoes"></div></a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h3><a href="../../assets/pages/women_tops.html">TOPS</a></h3>
+                                        <a class="item" href="../../assets/pages/women_tops.html"><div class="img-women-tops"></div></a>
                                     </div>
                                 </div>
                             </div>
                         </li>
                         <li>
                             <a class="navig-a" href="../../assets/pages/men.html">Men</a>
-                            <div class="dropdown-menu-women">
-                                <div class="man-nav">
-                                    <h4>ggggg</h4>
-                                    <a class="item" href="../../assets/pages/men.html">item</a>
-                                </div>
-                                <div class="man-nav">
-                                    <a class="item" href="../../assets/pages/men.html"><div class="img-nav-men"></div></a>
+                            <div class="dropdown-nav">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <h3><a href="../../assets/pages/men_jackets.html">JACKETS</a></h3>
+                                        <a class="item" href="../../assets/pages/men_jackets.html"><div class="img-men-jackets"></div></a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h3><a href="../../assets/pages/men_suits.html">SUITS</a></h3>
+                                        <a class="item" href="../../assets/pages/men_suits.html"><div class="img-men-suits"></div></a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h3><a href="../../assets/pages/men_t_shirts.html">T-SHIRTS</a></h3>
+                                        <a class="item" href="../../assets/pages/men_t_shirts.html"><div class="img-men-t-shirts"></div></a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h3><a href="../../assets/pages/men_shoes.html">SHOES</a></h3>
+                                        <a class="item" href="../../assets/pages/men_shoes.html"><div class="img-men-shoes"></div></a>
+                                    </div>
                                 </div>
                             </div>
                         </li>
-                        <li><a class="navig-a" href="#">Kids</a></li>
-                        <li><a class="navig-a" href="#">Comming Soon</a></li>
+                        <li><a class="navig-a" href="../../assets/pages/new_arrivels.html">New Arrivels</a></li>
                         <li><a class="navig-a" href="../../assets/pages/about.html">About</a></li>
                     </ul>
                 </div>
@@ -61,7 +76,7 @@
                     <li>
                         <div class="search-wrapper">
                             <div class="input-holder">
-                                <input id="tags" type="text" class="search-input" placeholder="Type to search" />
+                                <input id="input-search" type="text" class="search-input" placeholder="Type to search" />
                                 <button id="submit"  class="search-icon"  onclick="searchToggle(this, event);"><div></div></button>
                             </div>
                             <div class="close" onclick="searchToggle(this, event);"></div>
@@ -89,73 +104,167 @@
                 </ul>
             </div>
 
+
             <div class="page_single">
-                <!--demo2-->
-                <div class="cf left_single">
-                        <span class="demowrap"><img id="demo2" src="../img/woman/coats_woman/coat1.jpg"/></span>
-                        <ul id="demo2carousel" class="elastislide-list">
-                            <li><a href="#"><img src="../img/woman/coats_woman/coat1.jpg"></a></li>
-                        </ul>
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <div class="col-md-7">
+                            <div class="left_single">
+                                <span class="demowrap"><img id="demo2" src="../img/woman/coats_woman/coat1.jpg"/></span>
+                                <ul id="demo2carousel" class="elastislide-list">
+                                    <li><a href="#"><img src="../img/woman/coats_woman/coat1.jpg"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-md-5">
+                            <div class="right_single">
+                                <div class="name_single">
+                                    <h3 class="item_name">Grey coat for woman</h3>
+                                </div>
+
+                                <div class="article_single">
+                                    <p class="article" data-id="12345">Article number: 12345</p>
+                                </div>
+
+                                <div class="price_single">
+                                    <h3 class="item_price">&euro;134</h3>
+                                </div>
+
+                                <div class="color_single">
+                                    <span class="span_single">Color</span>
+                                    <ul class="color_single_list">
+                                        <li class="color_li" data-colorid="#" data-toggle="tooltip">
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="size_single">
+                                    <span class="span_single">Size</span>
+                                    <ul class="size-list">
+                                        <li><a class="circle" href="#">XS</a></li>
+                                        <li><a class="circle" href="#">&nbsp S &nbsp</a></li>
+                                        <li><a class="circle" href="#"> M &nbsp</a></li>
+                                        <li><a class="circle" href="#">&nbsp L &nbsp</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="buy_single">
+                                    <button class="add_item button_single btn btn-lg btn-primary" data-id="111">Add to Basket</button>
+                                </div>
+
+                                <div class="tab_info">
+                                    <ul class="nav nav-tabs">
+                                        <li class="active" data-toggle="tab" href="#description">
+                                            <h4>Description</h4>
+                                        </li>
+                                        <li data-toggle="tab" href="#delivery">
+                                            <h4>Delivery</h4>
+                                        </li>
+                                        <li data-toggle="tab" href="#returns">
+                                            <h4>Returns</h4>
+                                        </li>
+                                        <li data-toggle="tab" href="#comments">
+                                            <h4>Comments</h4>
+                                        </li>
+                                    </ul>
+
+                                <!-- Панели -->
+                                <div class="tab-content tab-content-desc">
+                                    <!-- Панель 1 -->
+                                    <div id="description" class="tab-pane fade in active">
+                                        <!-- Содержимое панели 1 -->
+                                        <div class="description_single">
+                                            <p>Content & care</p>
+                                            <ul class="content_single">
+                                                <li> Polyester, Viscose, Elastane, Cotton </li>
+                                                <li> Imported/domestic </li>
+                                                <li> Dry clean/ wash with sensitive </li>
+                                            </ul>
+                                            <p>Details & fit</p>
+                                            <ul class="details_single">
+                                                <li> Length: according to size and model  </li>
+                                                <li> Quality materials and accessories </li>
+                                                <li> Stylish models </li>
+                                                <li> High quality of goods </li>
+                                                <li> Individual approach to each client </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!-- Панель 2-->
+                                    <div id="delivery" class="tab-pane fade">
+                                        <!-- Содержимое панели 2 -->
+                                        <div class="delivery_single">
+                                            <p>Delivery price</p>
+                                            <ul>
+                                                <li><strong> Standard Home Delivery</strong> - <strong style="color:orange">&euro;3.95</strong><br />(within 5 working days)</li>
+                                                <li><strong> Click & Collect</strong> - <strong style="color:orange"> FREE</strong> <br />(within 3 working days)</li>
+                                                <li><strong>Click & Collect Next Working Day</strong> - <strong style="color:orange">&euro;1.99</strong><br />(order Before 4pm)</li>
+                                                <li><strong>Next Working Day Home Delivery</strong> - <strong style="color:orange">&euro;4.95</strong> <br />(order before 4pm)</li>
+                                            </ul>
+                                            <p><em>Next Day Click&Collect &euro;1.99</em></p>
+                                            <h5>Order before 4pm. Delivery hours are <br /> between 8am-8pm, Monday-Friday.</h5>
+                                            <p><em>FREE delivery to store with Click&Collect</em></p>
+                                            <h5>Delivery hours are between 8am-8pm, <br /> Monday-Friday.</h5>
+                                        </div>
+                                    </div>
+                                    <!-- Панель 3-->
+                                    <div id="returns" class="tab-pane fade">
+                                        <!-- Содержимое панели 3 -->
+                                        <div class="returns_single">
+                                            <p>Refunds</p>
+                                            <h5>1. Goods can either be returned to store <br />
+                                                or by post (see below).Please note that we <br />
+                                                do notoffer an exchange service by post.<br />
+                                                <br/>
+                                                2. We reserve the right to refuse to exchange <br />
+                                                or refund items that are not returned within <br/>
+                                                28 days of delivery.<br/>
+                                                <br/>
+                                                3. In order to qualify for our refunds policy,<br/>
+                                                all Items must be in a re-saleable condition <br/>
+                                                i.e. undamaged, in their original and <br/>
+                                                undamaged packaging, unworn and complete <br/>
+                                                with all tags andlabels attached
+                                                <br />
+                                            </h5>
+                                            <p>Free returns to store</p>
+                                            <h5>Your local store will be pleased to arrange <br/>
+                                                an exchange or refund for you under our <br/>
+                                                refunds policy.
+                                            </h5>
+                                        </div>
+                                    </div>
+                                    <div id="comments" class="tab-pane fade">
+                                        <!-- Содержимое панели 3 -->
+
+                                        <div class="first_comment">
+                                            <div class="info_comment">
+                                               <span>Leila Pit</span>
+                                               <h5>22/08/17</h5>
+                                            </div>
+                                            <div class="text_comment">
+                                               <h4>Stylish and quality coat. I recommend!</h4>
+                                            </div>
+                                        </div>
+                                        <p>Your comment</p>
+                                        <div class="form_single">
+                                            <form id="formComment" class="form-group">
+                                                <textarea name="comment" placeholder="Comment" id="text_single"></textarea>
+                                                <br/>
+                                                <input type="button" class="btn btn-success" id="commentSubmit" value="Add comment" onclick="addNewComment()">
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
-            <div class="right_single info">
-
-                <div class="name_single">
-                <h3>The fifth label the orbit grey marle button front coat</h3>
-                </div>
-
-                <div class="article_single">
-                <p class="article">Article number: 14210160762</p>
-                </div>
-
-                <div class="price_single">
-                <h3>&euro; 134</h3>
-                </div>
-
-                <div class="color_single">
-                <span class="span_single">Color</span>
-                    <ul class="color_single_list">
-                        <li class="color_li" data-colorid="#" data-toggle="tooltip">
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="size_single">
-                    <span class="span_single">Size</span>
-                    <ul class="size-list">
-                        <li><a class="circle" href="#">XS</a></li>
-                        <li><a class="circle" href="#">&nbsp S &nbsp</a></li>
-                        <li><a class="circle" href="#"> M &nbsp</a></li>
-                        <li><a class="circle" href="#">&nbsp L &nbsp</a></li>
-                    </ul>
-                </div>
-
-                <div class="buy_single">
-                    <button class="button_single btn btn-lg btn-primary">Add to Basket</button>
-                </div>
-
-                <div class="description_single">
-                    <h3><strong>Description</strong></h3>
-                    <p><strong>Content & care</strong></p>
-                    <ul class="content_single">
-                        <li> Polyester, Viscose, Elastane </li>
-                        <li> Imported </li>
-                        <li> Dry clean </li>
-                    </ul>
-                    <p><strong>Details & fit</strong></p>
-                    <ul class="details_single">
-                        <li> Length: 41.5" </li>
-                        <li> Sleeve length:24.5"/62.2 cm </li>
-                        <li> Structured lapel </li>
-                        <li> Single button fastening front </li>
-                        <li> Single vent back </li>
-                    </ul>
-                </div>
-
+              </div>
             </div>
-
-            </div>
-        </div>
     </section>
 </div>
 <div class="footer-container">
@@ -168,13 +277,13 @@
                         <div class="links social_media">
                             <ul class="items social_box">
                                 <li>
-                                    <a href="#"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a>
+                                    <a href="https://www.facebook.com/Zara/"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
+                                    <a href="https://www.instagram.com/zara/?hl=ru"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></a>
+                                    <a href="https://twitter.com/zara"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></a>
                                 </li>
                             </ul>
                         </div>
@@ -182,19 +291,20 @@
                 </div>
                 <div class="col-md-7">
                     <div class="block_subscribe">
-                        <form action="#" method="post" id="newsletter_validate">
+                        <form name="formNewsLetter" action="#" method="post" id="newsletter_validate">
                             <div class="block_content">
                                 <div class="input_box">
                                     <input type="email" name="email" id="newsletter" placeholder="Subscribe to our newsletter" class="input_text">
                                 </div>
                                 <div class="actions">
-                                    <button type="submit" title="Subscribe" class="button_subscribe">
+                                    <button id="btnNewsLetter" type="submit" title="Subscribe" class="button_subscribe">
                                         <span>Subscribe</span>
                                     </button>
                                 </div>
                             </div>
                         </form>
                     </div>
+                    <span id="errorEmailNewsLetter"></span>
                 </div>
             </div>
             <div class="clearfix"></div>
@@ -205,10 +315,9 @@
             <div class="col-md-3 footer-col">
                 <h3 class="ft-title">Collection</h3>
                 <ul class="ft-list">
-                    <li><a href="#">Woman</a></li>
-                    <li><a href="#">Men)</a></li>
-                    <li><a href="#">Kids</a></li>
-                    <li><a href="#">Comming Soon</a></li>
+                    <li><a href="../../assets/pages/women.html">Women</a></li>
+                    <li><a href="../../assets/pages/men.html">Men</a></li>
+                    <li><a href="../../assets/pages/new_arrivels.html">New Arrivals</a></li>
                 </ul>
             </div>
             <div class="col-md-3 footer-col">
@@ -227,7 +336,7 @@
                     <li><a href="#">About us</a></li>
                     <li><a href="#">Shipping Metods</a></li>
                     <li><a href="#">Career</a></li>
-                    <li><a href="assets/pages/contact.html">Contact</a></li>
+                    <li><a href="../../assets/pages/contact.html">Contact</a></li>
                 </ul>
             </div>
             <div class="col-md-3 foot-cl">
@@ -238,6 +347,25 @@
         </div>
     </div>
 </div>
+<script>
+    //autocomplete
+
+    let options = {
+        url: "../../assets/data-json/data-autocomplete.json",
+
+        getValue: "name",
+
+        list: {
+            match: {
+                enabled: true
+            },
+            maxNumberOfElements: 4
+        }
+    };
+
+    $("#input-search").easyAutocomplete(options);
+
+</script>
 <script type="text/javascript" src="../../build/scripts.min.js"></script>
 </body>
 </html>

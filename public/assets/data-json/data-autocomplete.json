@@ -1,10 +1,12 @@
 [ 
   {"name": "Woman"},
   {"name": "Men"},
-  {"name": "Kids"},
   {"name": "Comming soon"},
   {"name": "Coats"},
   {"name": "Dresses"},
-  {"name": "Shoes"}
+  {"name": "Shoes"},
+  {"name": "JACKETS"},
+  {"name": "SUITS"},
+  {"name": "T-SHIRTS"}
 
   ]

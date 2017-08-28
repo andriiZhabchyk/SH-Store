@@ -1,5 +1,5 @@
 // var d = document,
-//     itemBox = d.querySelectorAll('.prod-desc'), // блок каждого товара
+//     itemBox = d.querySelectorAll('.right_single'), // блок каждого товара
 //     cartCont = d.getElementById('cart_content'); // блок вывода данных корзины
 // // Функция кроссбраузерной установка обработчика событий
 // function addEvent(elem, type, handler){
@@ -25,8 +25,8 @@
 //     var cartData = getCartData() || {}, // получаем данные корзины или создаём новый объект, если данных еще нет
 //         parentBox = this.parentNode, // родительский элемент кнопки "Добавить в корзину"
 //         itemId = this.getAttribute('data-id'), // ID товара
-//         itemTitle = parentBox.querySelector('.item_title').innerHTML, // название товара
-//         itemPrice = parentBox.querySelector('.item_price').innerHTML; // стоимость товара
+//         itemTitle = parentBox.querySelectorAll('.item_name'),// название товара
+//         itemPrice = parentBox.querySelectorAll('.item_price'); // стоимость товара
 //     if(cartData.hasOwnProperty(itemId)){ // если такой товар уже в корзине, то добавляем +1 к его количеству
 //         cartData[itemId][2] += 1;
 //     } else { // если товара в корзине еще нет, то добавляем в объект
@@ -68,5 +68,5 @@
 // /* Очистить корзину */
 // addEvent(d.getElementById('clear_cart'), 'click', function(e){
 //     localStorage.removeItem('cart');
-//     cartCont.innerHTML = 'Корзина очишена.';
+//     cartCont.innerHTML = 'Корзина очищена';
 // });
