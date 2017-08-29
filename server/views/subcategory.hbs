@@ -1,13 +1,13 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Hazy Shade | Women</title>
-    <link rel="stylesheet" href="../../build/style.css">
+    <title>Hazy Shade | Women | Coats</title>
+    <link rel="stylesheet" href="../../build/style.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="../../node_modules/font-awesome/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
 </head>
-<body onload="getWomenData()">
+<body>
 <div class="header">
     <div id="demo_top_wrapper">
         <div id="sticky_navigation">
@@ -84,7 +84,7 @@
                         <span></span><a href="../../assets/pages/login.html">Log In</a>
                     </li>
                     <li>
-                        <span class="bascket"></span><a href="../../assets/pages/bascket.html">Basket(0)</a>
+                        <a href="../../assets/pages/bascket.html">Basket(0)</a>
                     </li>
                 </ul>
             </div>
@@ -93,47 +93,114 @@
     </div>
 </div>
 <div class="container">
+    <div class="pag-nav">
+        <ul class="p-list">
+            <li><a href="/">Home</a></li>
+            <li class="act">&nbsp;<a href="/women">{{category}}</a></li>
+            <li class="act">&nbsp;<a href="/women/coats">{{subcategory}}</a></li>
+        </ul>
+    </div>
+</div>
+<!--Filters-->
+<div class="filter-container">
+    <div class="container">
+        <form action="#"  method="get" id="filter_form">
+            <div class="all_filters">
+
+                <!--Price range-->
+                <div class="range_filter">
+                    <p>
+                        <label for="amount">Price range:</label>
+                        <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+                    </p>
+                    <div id="slider-range"></div>
+                </div>
+                <!--End price range-->
+
+                <!--Colors filter-->
+                <div class="colors_filter">
+                    <p><strong>Сolor:</strong></p>
+                    <div class="colors_filter_scroll">
+                        <input type='checkbox' id="ch1" value='1'>
+                        <div class="col_white"></div>
+                        <label for="ch1">White</label><br/>
+                        <input type='checkbox' id="ch2" value='2'>
+                        <div class="col_red"></div>
+                        <label for="ch2">Red</label><br/>
+                        <input type='checkbox' id="ch3" value='3'>
+                        <div class="col_black"></div>
+                        <label for="ch3">Black</label><br/>
+                        <input type='checkbox' id="ch4" value='4'>
+                        <div class="col_blue"></div>
+                        <label for="ch4">Blue</label><br/>
+                        <input type='checkbox' id="ch6" value='6'>
+                        <div class="col_green"></div>
+                        <label for="ch6">Green</label><br/>
+                        <input type='checkbox' id="ch5" value='5'>
+                        <div class="col_pink"></div>
+                        <label for="ch5">Pink</label><br/>
+                        <input type='checkbox' id="ch7" value='7'>
+                        <div class="col_brown"></div>
+                        <label for="ch7">Brown</label><br/>
+                        <input type='checkbox' id="ch8" value='8'>
+                        <div class="col_grey"></div>
+                        <label for="ch8">Grey</label><br/>
+                    </div>
+                </div>
+                <!--<p>Your favourite color:</p>-->
+                <!--<input type="color">-->
+                <!--End colors_filter-->
+
+                <!--Brand filter-->
+                <div class="brands_filter">
+                    <p><strong>Brand:</strong></p>
+                    <select name="brands">
+                        <option selected="selected">-- brand--</option>
+                        {{#each brands}}
+                            <option value={{this}}>{{this}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+                <!--End brand_filter-->
+
+                <!--Size filters-->
+                <div class="size_filter">
+                    <p><strong>Size:</strong></p>
+                    <div class="size_filter_scroll">
+                        {{#each sizes}}
+                            <input type='checkbox' id="s1" value={{@index}}>
+                            <label for="s1">{{this}}</label>
+                        {{/each}}
+                    </div>
+                </div>
+                <input type="submit" id="submit_filter" value="Filter out">
+            </div>
+        </form>
+    </div>
+</div>
+
+<!--End filtres-->
+
+<div class="container">
     <section id="main">
         <div class="content">
-            <div class="pag-nav">
-                <ul class="p-list">
-                    <li><a href="../../index.html">Home</a></li>
-                    <li class="act">&nbsp;Women</li>
-                </ul>
-            </div>
             <div class="coats">
-                <h3 class="c-head">Coats</h3>
-                <small><a href="women_coats.html">Show More</a></small>
-                <div class="coat-row" id="coats">
-
-
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-            <div class="coats">
-                <h3 class="c-head">Tops</h3>
-                <small><a href="women_tops.html">Show More</a></small>
+                <h3 class="c-head">{{subcategory}}</h3>
                 <div class="coat-row">
-
-
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-            <div class="coats">
-                <h3 class="c-head">Dresses</h3>
-                <small><a href="women_dresses.html">Show More</a></small>
-                <div class="coat-row">
-
-
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-            <div class="coats">
-                <h3 class="c-head">Shoes</h3>
-                <small><a href="women_shoes.html">Show More</a></small>
-                <div class="coat-row">
-
-
+                    {{#each items}}
+                        <div class="coat-column">
+                            <a href="single.html">
+                                <img src={{image}} class="img-responsive" alt="">
+                                <div class="prod-desc">
+                                    <h4 class="item_title">{{title}}</h4>
+                                    <small class="item_price">&euro; {{price}}</small>
+                                </div>
+                            </a>
+                            <div class="mask">
+                                <div class="info"><a href="single.html">View</a></div>
+                            </div>
+                        </div>
+                    {{/each}}
                     <div class="clearfix"></div>
                 </div>
             </div>
@@ -188,7 +255,7 @@
                 <h3 class="ft-title">Collection</h3>
                 <ul class="ft-list">
                     <li><a href="#">Woman</a></li>
-                    <li><a href="#">Men)</a></li>
+                    <li><a href="#">Men</a></li>
                     <li><a href="#">Kids</a></li>
                     <li><a href="#">Comming Soon</a></li>
                 </ul>
@@ -209,7 +276,7 @@
                     <li><a href="#">About us</a></li>
                     <li><a href="#">Shipping Metods</a></li>
                     <li><a href="#">Career</a></li>
-                    <li><a href="assets/pages/contact.html">Contact</a></li>
+                    <li><a href="../../assets/pages/contact.html">Contact</a></li>
                 </ul>
             </div>
             <div class="col-md-3 foot-cl">
@@ -220,19 +287,6 @@
         </div>
     </div>
 </div>
-<script type="text/x-handlebars-template" id="item-template">
-    <div class="coat-column">
-        <a href="single.html">
-            <img src="../img/woman/tops_woman/top7.jpg" class="img-responsive" alt="">
-            <div class="prod-desc"><h4>Double-Layered Top</h4>
-                <small>&euro; 89,95</small>
-            </div>
-        </a>
-        <div class="mask">
-            <div class="info"><a href="single.html">View</a></div>
-        </div>
-    </div>
-</script>
 <script type="text/javascript" src="../../build/scripts.min.js"></script>
 </body>
 </html>

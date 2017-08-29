@@ -4,9 +4,7 @@ let gulp = require('gulp'),
     less = require('gulp-less'),
     autoprefixer = require('gulp-autoprefixer'),
     cssmin = require('gulp-clean-css'),
-    jsmin = require('gulp-uglify'),
-    webserver = require('gulp-webserver'),
-    livereload = require('gulp-livereload');
+    jsmin = require('gulp-uglify');
 
 let path = {
     html: [
@@ -54,11 +52,6 @@ let watchersPath = {
     ]
 };
 
-gulp.task('html', function () {
-    return gulp.src(path.html)
-        .pipe(livereload());// notify livereload server about changes
-});
-
 gulp.task('style', function () {
     return gulp.src(path.styles.src)
         .pipe(concat('style.less'))
@@ -74,7 +67,6 @@ gulp.task('style', function () {
         .pipe(cssmin())
         .pipe(rename(path.styles.name + '.min.css'))
         .pipe(gulp.dest(path.styles.dest))
-        .pipe(livereload());
 });
 
 gulp.task('scripts', function () {
@@ -85,20 +77,9 @@ gulp.task('scripts', function () {
         /*.pipe(jsmin())*/
         .pipe(rename(path.scripts.name + '.min.js'))
         .pipe(gulp.dest(path.scripts.dest))
-        .pipe(livereload());
 });
 
-gulp.task('webserver', function() {
-    gulp.src('./')
-        .pipe(webserver({
-            livereload: true,
-            open: true,
-            fallback: 'index.html'
-        }));
-});
-
-gulp.task('watch', ['style', 'scripts', 'webserver'], function() {
-    livereload.listen();
+gulp.task('watch', ['style', 'scripts'], function() {
     gulp.watch(watchersPath.html, ['html']);
     gulp.watch(watchersPath.styles, ['style']);
     gulp.watch(watchersPath.scripts, ['scripts']);

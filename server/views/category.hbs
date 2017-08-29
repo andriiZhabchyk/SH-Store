@@ -1,18 +1,18 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Hazy Shade | Women</title>
+    <title>Hazy Shade | {{category}}</title>
     <link rel="stylesheet" href="../../build/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="../../node_modules/font-awesome/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
 </head>
-<body onload="getWomenData()">
+<body>
 <div class="header">
     <div id="demo_top_wrapper">
         <div id="sticky_navigation">
             <div class="navigation">
-                <div class="logo"><a href="../../index.html">SH</a></div>
+                <div class="logo"><a href="/">SH</a></div>
                 <span class="menu"></span>
                 <div class="navig">
                     <ul>
@@ -97,45 +97,31 @@
         <div class="content">
             <div class="pag-nav">
                 <ul class="p-list">
-                    <li><a href="../../index.html">Home</a></li>
-                    <li class="act">&nbsp;Women</li>
+                    <li><a href="/">Home</a></li> |
+                    <li class="act">&nbsp;{{category}}</li>
                 </ul>
             </div>
             <div class="coats">
-                <h3 class="c-head">Coats</h3>
-                <small><a href="women_coats.html">Show More</a></small>
-                <div class="coat-row" id="coats">
-
-
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-            <div class="coats">
-                <h3 class="c-head">Tops</h3>
-                <small><a href="women_tops.html">Show More</a></small>
-                <div class="coat-row">
-
-
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-            <div class="coats">
-                <h3 class="c-head">Dresses</h3>
-                <small><a href="women_dresses.html">Show More</a></small>
-                <div class="coat-row">
-
-
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-            <div class="coats">
-                <h3 class="c-head">Shoes</h3>
-                <small><a href="women_shoes.html">Show More</a></small>
-                <div class="coat-row">
-
-
-                    <div class="clearfix"></div>
-                </div>
+                {{#each itemSubcategory}}
+                    <h3 class="c-head">{{subcategory}}</h3>
+                    <small><a href={{item-subcategory}}>Show More</a></small>
+                    <div class="coat-row" id="coats">
+                        {{#each items}}
+                            <div class="coat-column">
+                                <a href="single.html">
+                                    <img src={{image}} class="img-responsive" alt="">
+                                    <div class="prod-desc"><h4>{{title}}</h4>
+                                        <small>&euro; {{price}}</small>
+                                    </div>
+                                </a>
+                                <div class="mask">
+                                    <div class="info"><a href="single.html">View</a></div>
+                                </div>
+                            </div>
+                        {{/each}}
+                        <div class="clearfix"></div>
+                    </div>
+                {{/each}}
             </div>
         </div>
     </section>
@@ -188,7 +174,7 @@
                 <h3 class="ft-title">Collection</h3>
                 <ul class="ft-list">
                     <li><a href="#">Woman</a></li>
-                    <li><a href="#">Men)</a></li>
+                    <li><a href="#">Men</a></li>
                     <li><a href="#">Kids</a></li>
                     <li><a href="#">Comming Soon</a></li>
                 </ul>

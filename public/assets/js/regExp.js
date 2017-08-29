@@ -28,7 +28,7 @@ $(document).ready(function () {
 
             //password
             let passwordRegExp =/^[A-zА-яЁё0-9_]{5,18}$/ ;
-
+console.log(formElements[i].value)
             if(formElements[i].value === "") {
                 document.getElementById("errorPassword").innerHTML = 'Required field'
             }
@@ -41,7 +41,6 @@ $(document).ready(function () {
                     document.getElementById("errorPassword").innerHTML = 'password length from 5 to 18 symbols, use uppercase and lowercase letters, numbers and symbol "_"';
                 }
             }
-
         }
 
         event.preventDefault()
@@ -100,12 +99,15 @@ $(document).ready(function () {
             let EmailRegExp =/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/; //не проверяет на пустую строку!!!
 
             if(formElements[i].value === "") {
-                document.getElementById("errorEmail").innerHTML = 'Required field'
+                document.getElementById("errorEmail").innerHTML = 'Required field';
+                continue;
             }
 
             if(formElements[i].value !== "") {
+               console.log(formElements[i].value)
                 if (EmailRegExp.test(document.getElementById("registerEmail").value)) {
                     document.getElementById("errorEmail").innerHTML = '';
+                    continue
                 }  else if (!EmailRegExp.test(document.getElementById("registerEmail").value || formElements[i].value)) {
 
                     document.getElementById("errorEmail").innerHTML = 'Enter correct email';
