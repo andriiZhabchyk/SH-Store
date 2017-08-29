@@ -1,3 +1,4 @@
+
 // var d = document,
 //     itemBox = d.querySelectorAll('.right_single'), // блок каждого товара
 //     cartCont = d.getElementById('cart_content'); // блок вывода данных корзины
