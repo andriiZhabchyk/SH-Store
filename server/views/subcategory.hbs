@@ -119,32 +119,12 @@
 
                 <!--Colors filter-->
                 <div class="colors_filter">
-                    <p><strong>Сolor:</strong></p>
+                    <p><strong>Country:</strong></p>
                     <div class="colors_filter_scroll">
-                        <input type='checkbox' id="ch1" value='1'>
-                        <div class="col_white"></div>
-                        <label for="ch1">White</label><br/>
-                        <input type='checkbox' id="ch2" value='2'>
-                        <div class="col_red"></div>
-                        <label for="ch2">Red</label><br/>
-                        <input type='checkbox' id="ch3" value='3'>
-                        <div class="col_black"></div>
-                        <label for="ch3">Black</label><br/>
-                        <input type='checkbox' id="ch4" value='4'>
-                        <div class="col_blue"></div>
-                        <label for="ch4">Blue</label><br/>
-                        <input type='checkbox' id="ch6" value='6'>
-                        <div class="col_green"></div>
-                        <label for="ch6">Green</label><br/>
-                        <input type='checkbox' id="ch5" value='5'>
-                        <div class="col_pink"></div>
-                        <label for="ch5">Pink</label><br/>
-                        <input type='checkbox' id="ch7" value='7'>
-                        <div class="col_brown"></div>
-                        <label for="ch7">Brown</label><br/>
-                        <input type='checkbox' id="ch8" value='8'>
-                        <div class="col_grey"></div>
-                        <label for="ch8">Grey</label><br/>
+                        {{#each country}}
+                            <input type='checkbox' id="ch1" value={{@index}}>
+                            <label for="ch1">{{this}}</label><br/>
+                        {{/each}}
                     </div>
                 </div>
                 <!--<p>Your favourite color:</p>-->
@@ -188,7 +168,7 @@
                 <h3 class="c-head">{{subcategory}}</h3>
                 <div class="coat-row">
                     {{#each items}}
-                        <div class="coat-column">
+                        <div class="coat-column" data-id={{id}}>
                             <a href="single.html">
                                 <img src={{image}} class="img-responsive" alt="">
                                 <div class="prod-desc">
@@ -197,7 +177,7 @@
                                 </div>
                             </a>
                             <div class="mask">
-                                <div class="info"><a href="single.html">View</a></div>
+                                <div class="info"><a href="#">View</a></div>
                             </div>
                         </div>
                     {{/each}}

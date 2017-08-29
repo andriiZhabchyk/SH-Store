@@ -104,10 +104,10 @@
             <div class="coats">
                 {{#each itemSubcategory}}
                     <h3 class="c-head">{{subcategory}}</h3>
-                    <small><a href={{item-subcategory}}>Show More</a></small>
+                    <small><a href={{subcategory}}>Show More</a></small>
                     <div class="coat-row" id="coats">
                         {{#each items}}
-                            <div class="coat-column">
+                            <div class="coat-column" data-id={{id}} >
                                 <a href="single.html">
                                     <img src={{image}} class="img-responsive" alt="">
                                     <div class="prod-desc"><h4>{{title}}</h4>
