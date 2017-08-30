@@ -273,7 +273,8 @@
   border-width: 0 1px 1px;
 }
 .easy-autocomplete-container ul li.selected {
-  background: linear-gradient(135deg, #f68236, #ead9d5 60%, #ecd0ca) ;
+  background-color: #f68236;
+  /*background: linear-gradient(135deg, #f68236, #ead9d5 60%, #ecd0ca) ;*/
   cursor: pointer;
   color: #ffffff;
 }
