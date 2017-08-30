@@ -442,14 +442,21 @@
     let options = {
         url: "../../assets/data-json/data-autocomplete.json",
 
-        getValue: "name",
+        getValue: "text",
 
+        template: {
+            type: "links",
+            fields: {
+                link: "../../website-link"
+            }
+        },
         list: {
             match: {
                 enabled: true
             },
             maxNumberOfElements: 4
         }
+
     };
 
     $("#input-search").easyAutocomplete(options);
