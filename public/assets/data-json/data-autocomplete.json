@@ -1,10 +1,53 @@
 [ 
-  {"name": "Woman"},
-  {"name": "Men"},
-  {"name": "Kids"},
-  {"name": "Comming soon"},
-  {"name": "Coats"},
-  {"name": "Dresses"},
-  {"name": "Shoes"}
+  {
+    "text": "Women",
+    "website-link": "assets/pages/women.html",
+    "../../website-link": "../../assets/pages/women.html"
+  },
+  {
+    "text": "Men",
+    "website-link": "assets/pages/men.html",
+    "../../website-link": "../../assets/pages/men.html"
+  },
+  {
+    "text": "New Arrivals",
+    "website-link": "assets/pages/new_arrivels.html",
+    "../../website-link": "../../assets/pages/new_arrivels.html"
+  },
+  {
+    "text": "Women coats",
+    "website-link": "assets/pages/women_coats.html",
+    "../../website-link": "../../assets/pages/women_coats.html"
+  },
+  {
+    "text": "Dresses",
+    "website-link": "assets/pages/women_dresses.html",
+    "../../website-link": "../../assets/pages/women_dresses.html"
+  },
+  {
+    "text": "Women shoes",
+    "website-link": "assets/pages/women_shoes.html",
+    "../../website-link": "../../assets/pages/women_shoes.html"
+  },
+  {
+    "text": "Men jackets",
+    "website-link": "assets/pages/men_jackets.html",
+    "../../website-link": "../../assets/pages/men_jackets.html"
+  },
+  {
+    "text": "Men suits",
+    "website-link": "assets/pages/men_suits.html",
+    "../../website-link": "../../assets/pages/men_suits.html"
+  },
+  {
+    "text": "Men shoes",
+    "website-link": "assets/pages/men_shoes.html",
+    "../../website-link": "../../assets/pages/men_shoes.html"
+  },
+  {
+    "text": "Men T-shirts",
+    "website-link": "assets/pages/men_t_shirts.html",
+    "../../website-link": "../../assets/pages/men_t_shirts.html"
+  }
 
   ]
