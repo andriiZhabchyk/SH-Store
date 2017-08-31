@@ -27,7 +27,7 @@ $(document).ready(function () {
 
 
             //password
-            let passwordRegExp =/^[A-zА-яЁё0-9_]{5,18}$/ ;
+            let passwordRegExp =/^[A-zА-яЁё0-9_]{6,18}$/ ;
 
             if(formElements[i].value === "") {
                 document.getElementById("errorPassword").innerHTML = 'Required field'
