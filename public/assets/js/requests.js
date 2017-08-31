@@ -1,12 +1,12 @@
 'use strict';
 
-let getWomenData= () => {
+let getSubcategoryData = () => {
+    const pathname = location.pathname;
     $.ajax({
         method: "GET",
-        url: "some.php",
-        data: { name: "John", location: "Boston" }
-    })
-        .done(function( msg ) {
-            alert( "Data Saved: " + msg );
-        });
+        url: pathname + "/filters",
+        dataType: 'html'
+    }).done(( data ) => {
+        $('#filters').html('').append(data);
+    });
 };

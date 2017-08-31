@@ -10,18 +10,21 @@ const path = require('path');
 const cors = require('cors');
 
 let dBase;
+let subcategory = {};
 
 app.use(bodyParser.urlencoded({ extended: true}));
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(cors());
 
-app.get('/men', function root(req, res) {
+app.get('/:category', function root(req, res) {
+    const category = req.params.category;
+
     let subcategory = {
-        category: "Men",
+        category: category,
         itemSubcategory: []
     };
 
-    dBase.collection('menClothing').find({category: "men"}, {items: {$slice: 4}}).toArray((err, item) => {
+    dBase.collection(`${category}`).find({category: category}, {items: {$slice: 4}}).toArray((err, item) => {
         if (err) {
             res.send({ 'error': 'An error has occurred' });
         } else {
@@ -31,44 +34,32 @@ app.get('/men', function root(req, res) {
     });
 });
 
-app.get('/women', function root(req, res) {
-    let subcategory = {
-        category: "Women",
-        itemSubcategory: []
-    };
-
-    dBase.collection('womenClothing').find({category: "women"}, {items: {$slice: 4}}).toArray((err, item) => {
+app.get('/:category/:subcategory', (req, res) => {
+    dBase.collection(req.params.category).findOne({subcategory: req.params.subcategory}, (err, item) => {
         if (err) {
-            res.send({ 'error': 'An error has occurred' });
+            res.send({'error': 'An error has occurred'});
         } else {
-            subcategory.itemSubcategory = item;
-            res.render('category.hbs', subcategory);
+            res.render('subcategory.hbs', item);
         }
     });
 });
 
-app.get('/women/coats', function root(req, res) {
-    let subcategory = {};
+app.get('/:category/:subcategory/filters', (req, res) => {
+    const category = req.params.category,
+        subcategories = req.params.subcategory;
 
-    dBase.collection('womenClothing').findOne({subcategory: "coats"},(err, item) => {
-        if (err) {
-            res.send({ 'error': 'An error has occurred' });
-        } else {
-            subcategory = item;
-        }
-    });
-
-    dBase.collection('womenClothing').distinct('items.size', {subcategory: "coats"}, (err, sizes) => {
+    dBase.collection(category).distinct('items.size', {subcategory: subcategories}, (err, sizes) => {
         subcategory.sizes = sizes;
     });
 
-    dBase.collection('womenClothing').distinct('items.brand', {subcategory: "coats"}, (err, brands) => {
+    dBase.collection(category).distinct('items.brand', {subcategory: subcategories}, (err, brands) => {
         subcategory.brands = brands;
     });
 
-    dBase.collection('womenClothing').distinct('items.country', {subcategory: "coats"}, (err, country) => {
+    dBase.collection(category).distinct('items.country', {subcategory: subcategories}, (err, country) => {
         subcategory.country = country;
-        res.render('subcategory.hbs', subcategory);
+        res.render('Filters.hbs', subcategory);
+       /* res.send(subcategory);*/
     });
 });
 
