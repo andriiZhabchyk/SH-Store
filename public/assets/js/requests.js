@@ -8,5 +8,24 @@ let getSubcategoryData = () => {
         dataType: 'html'
     }).done(( data ) => {
         $('#filters').html('').append(data);
+        getPriceData();
     });
 };
+
+$('#getItemInfo').on('click', () => {
+    let elem = document.getElementById('item-info');
+    elem = elem.innerHTML;
+
+    let target = $(event.currentTarget).parent().parent();
+    target = target.attr('data-id');
+
+    $.ajax({
+        url:  `${elem}/${target}`,
+        method: "GET",
+        dataType: 'html'
+    }).done((data) => {
+        console.log(data);
+    });
+});
+
+

@@ -1,0 +1,364 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Hazy Shade | Home</title>
+    <link rel="stylesheet" href="build/style.css">
+    <link rel="stylesheet" href="assets/slick/slick.css">
+    <link rel="stylesheet" href="assets/slick/slick-theme.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="node_modules/font-awesome/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="assets/autocomplete/easy-autocomplete.css">
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="assets/autocomplete/jquery.easy-autocomplete.js"></script>
+</head>
+<body>
+<div class="header">
+    <div id="demo_top_wrapper">
+        <div id="sticky_navigation">
+            <div class="navigation">
+                <div class="logo"><a href="index.html">SH</a></div>
+                <span class="menu"></span>
+                <div class="navig">
+                    <ul>
+                        <li>
+                            <a class="navig-a" href="assets/pages/women.html">Women</a>
+                            <div class="dropdown-nav">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <h3><a href="assets/pages/women_coats.html">COATS</a></h3>
+                                        <a class="item" href="assets/pages/women_coats.html"><div class="img-women-coats"></div></a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h3><a href="assets/pages/women_dresses.html">DRESSES</a></h3>
+                                        <a class="item" href="assets/pages/women_dresses.html"><div class="img-women-dresses"></div></a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h3><a href="assets/pages/women_shoes.html">SHOES</a></h3>
+                                        <a class="item" href="assets/pages/women_shoes.html"><div class="img-women-shoes"></div></a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h3><a href="assets/pages/women_tops.html">TOPS</a></h3>
+                                        <a class="item" href="assets/pages/women_tops.html"><div class="img-women-tops"></div></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="navig-a" href="assets/pages/men.html">Men</a>
+                            <div class="dropdown-nav">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <h3><a href="assets/pages/men_jackets.html">JACKETS</a></h3>
+                                        <a class="item" href="assets/pages/men_jackets.html"><div class="img-men-jackets"></div></a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h3><a href="assets/pages/men_suits.html">SUITS</a></h3>
+                                        <a class="item" href="assets/pages/men_suits.html"><div class="img-men-suits"></div></a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h3><a href="assets/pages/men_t_shirts.html">T-SHIRTS</a></h3>
+                                        <a class="item" href="assets/pages/men_t_shirts.html"><div class="img-men-t-shirts"></div></a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h3><a href="assets/pages/men_shoes.html">SHOES</a></h3>
+                                        <a class="item" href="assets/pages/men_shoes.html"><div class="img-men-shoes"></div></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a class="navig-a" href="assets/pages/new_arrivels.html">New Arrivals</a>
+                            <div class="dropdown-nav">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <h3><a href="assets/pages/new_arrivels.html"></a></h3>
+                                        <a class="item" href="assets/pages/new_arrivels.html"><div class="img-men-new"></div></a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h3><a href="assets/pages/new_arrivels.html"></a></h3>
+                                        <a class="item" href="assets/pages/new_arrivels.html"><div class="img-women-new"></div></a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h3><a href="assets/pages/new_arrivels.html"></a></h3>
+                                        <a class="item" href="assets/pages/new_arrivels.html"><div class="img-men-new2"></div></a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h3><a href="assets/pages/new_arrivels.html"></a></h3>
+                                        <a class="item" href="assets/pages/new_arrivels.html"><div class="img-women-new2"></div></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a class="navig-a" href="assets/pages/about.html">About</a></li>
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="navigation-right">
+                <ul class="user">
+                    <li>
+                        <div class="search-wrapper">
+                            <div class="input-holder">
+                                <input id="input-search" type="text" class="search-input" placeholder="Type to search" />
+                                <button id="submit"  class="search-icon"  onclick="searchToggle(this, event);"><div></div></button>
+                            </div>
+                            <div class="close" onclick="searchToggle(this, event);"></div>
+                        </div>
+                    </li>
+                    <li class="log-in">
+                        <a href="assets/pages/login.html">Log In</a>
+                    </li>
+                    <li>
+                        <a href="assets/pages/bascket.html">Basket(0)</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+    <div class="slider-container">
+        <div class="slider-wrapper">
+            <div class="banner slider1">
+                <h1>Hazy Shade of spring</h1>
+                <small>Quisque lorem tortor fringilla sed, vestibulum id, eleifend justo.</small>
+                <div class="ban-btn">
+                    <a href="assets/pages/new_arrivels.html">check new arrivals</a>
+                </div>
+            </div>
+            <div class="banner slider2">
+                <h1>Hazy Shade of spring</h1>
+                <small>Quisque lorem tortor fringilla sed, vestibulum id, eleifend justo.</small>
+                <div class="ban-btn">
+                    <a href="assets/pages/new_arrivels.html">check new arrivals</a>
+                </div>
+            </div>
+            <div class="banner slider3">
+                <h1>Hazy Shade of spring</h1>
+                <small>Quisque lorem tortor fringilla sed, vestibulum id, eleifend justo.</small>
+                <div class="ban-btn">
+                    <a href="assets/pages/new_arrivels.html">check new arrivals</a>
+                </div>
+            </div>
+            <div class="banner slider4">
+                <h1>Hazy Shade of spring</h1>
+                <small>Quisque lorem tortor fringilla sed, vestibulum id, eleifend justo.</small>
+                <div class="ban-btn">
+                    <a href="assets/pages/new_arrivels.html">check new arrivals</a>
+                </div>
+            </div>
+            <div class="banner slider5">
+                <h1>Hazy Shade of spring</h1>
+                <small>Quisque lorem tortor fringilla sed, vestibulum id, eleifend justo.</small>
+                <div class="ban-btn">
+                    <a href="assets/pages/new_arrivels.html">check new arrivals</a>
+                </div>
+            </div>
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094</a>
+        <a class="next" onclick="plusSlides(1)">&#10095</a>
+        <div class="dots" style="text-align: center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+        </div>
+    </div>
+<div class="container">
+    <section id="main">
+        <div class="content">
+            <div class="container">
+                <div class="row">
+                        <div class="features-page">
+                            <div class="row">
+                                <!--Desktop -->
+                                <div class="col-sm-6 hidden-xs">
+                                    <div class="graphic back">
+                                        <a href="assets/pages/women.html"><div class="img-gallery1"></div></a>
+                                    </div>
+                                </div>
+                                <!--Mobile-->
+                                <div class="col-xs-12 hidden-sm hidden-md hidden-lg">
+                                    <a href="assets/pages/women.html"><div class="img-gallery1"></div></a>
+                                </div>
+                                <!--Desktop-->
+                                <div class="col-sm-6 hidden-xs">
+                                    <div class="graphic new">
+                                        <a href="assets/pages/women.html"><div class="img-gallery2"></div></a>
+                                    </div>
+                                </div>
+                                <!--Mobile-->
+                                <div class="col-xs-12 hidden-sm hidden-md hidden-lg">
+                                    <a href="assets/pages/women.html"><div class="img-gallery2"></div></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <!--Desktop-->
+                            <div class="col-sm-12 hidden-xs">
+                                <div class="graphic swim">
+                                    <a href="assets/pages/women.html"><div class="img-gallery3"></div></a>
+                                </div>
+                            </div>
+                            <!--Mobile-->
+                            <div class="col-xs-12 hidden-sm hidden-md hidden-lg">
+                                <a href="assets/pages/women.html"><div class="img-gallery3"></div></a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <!--Desktop-->
+                            <div class="col-sm-6 hidden-xs">
+                                <div class="graphic best">
+                                    <a href="assets/pages/women.html"><div class="img-gallery4"></div></a>
+                                </div>
+                            </div>
+                            <!--Mobile-->
+                            <div class="col-xs-12 hidden-sm hidden-md hidden-lg">
+                                <a href="assets/pages/women.html"><div class="img-gallery4"></div></a>
+                            </div>
+                            <!--Desktop-->
+                            <div class="col-sm-6 hidden-xs">
+                                <div class="graphic sunglasses">
+                                    <a href="assets/pages/women.html"><div class="img-gallery5"></div></a>
+                                </div>
+                            </div>
+                            <!--Mobile-->
+                            <div class="col-xs-12 hidden-sm hidden-md hidden-lg">
+                                <a href="assets/pages/women.html"><div class="img-gallery5"></div></a>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<div class="slider-gallery-container">
+    <div class="slider-gallery">
+        <div class="item"><div class="img-slider" style="background-image: url(assets/img/sliders/slider-1.jpg)"></div></div>
+        <div class="item"><div class="img-slider" style="background-image: url(assets/img/sliders/slider-2.jpg)"></div></div>
+        <div class="item"><div class="img-slider" style="background-image: url(assets/img/sliders/slider-3.jpg)"></div></div>
+        <div class="item"><div class="img-slider" style="background-image: url(assets/img/sliders/slider-4.jpg)"></div></div>
+        <div class="item"><div class="img-slider" style="background-image: url(assets/img/sliders/slider-6.jpg)"></div></div>
+        <div class="item"><div class="img-slider" style="background-image: url(assets/img/sliders/slider-7.jpg)"></div></div>
+        <div class="item"><div class="img-slider" style="background-image: url(assets/img/sliders/slider-8.jpg)"></div></div>
+        <div class="item"><div class="img-slider" style="background-image: url(assets/img/sliders/slider-9.jpg)"></div></div>
+        <div class="item"><div class="img-slider" style="background-image: url(assets/img/sliders/slider-10.jpg)"></div></div>
+        <div class="item"><div class="img-slider" style="background-image: url(assets/img/sliders/slider-11.jpg)"></div></div>
+        <div class="item"><div class="img-slider" style="background-image: url(assets/img/sliders/slider-12.jpg)"></div></div>
+        <div class="item"><div class="img-slider" style="background-image: url(assets/img/sliders/slider-13.jpg)"></div></div>
+        <div class="item"><div class="img-slider" style="background-image: url(assets/img/sliders/slider-14.jpg)"></div></div>
+        <div class="item"><div class="img-slider" style="background-image: url(assets/img/sliders/slider-15.jpg)"></div></div>
+    </div>
+</div>
+<div class="footer-container">
+    <div class="row">
+        <div class="footer-sign-up">
+            <div class="container-sign-up">
+                <div class="col-md-5">
+                    <div class="social_media_panel">
+                        <div class="follow-us">Follow us</div>
+                        <div class="links social_media">
+                            <ul class="items social_box">
+                                <li>
+                                    <a href="https://www.facebook.com/Zara/"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/zara/?hl=ru"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://twitter.com/zara"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="block_subscribe">
+                        <form name="formNewsLetter" action="#" method="post" id="newsletter_validate">
+                            <div class="block_content">
+                                <div class="input_box">
+                                    <input type="email" name="email" id="newsletter" placeholder="Subscribe to our newsletter" class="input_text">
+                                </div>
+                                <div class="actions">
+                                    <button id="btnNewsLetter" type="submit" title="Subscribe" class="button_subscribe">
+                                        <span>Subscribe</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <span id="errorEmailNewsLetter"></span>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="row footer-row">
+            <div class="col-md-3 footer-col">
+                <h3 class="ft-title">Collection</h3>
+                <ul class="ft-list">
+                    <li><a href="assets/pages/women.html">Women</a></li>
+                    <li><a href="assets/pages/men.html">Men</a></li>
+                    <li><a href="assets/pages/new_arrivels.html">New Arrivals</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 footer-col">
+                <h3 class="ft-title">site</h3>
+                <ul class="ft-list  list-h">
+                    <li><a href="#">Terms of Service </a></li>
+                    <li><a href="#">Privacy Policy </a></li>
+                    <li><a href="#">Copyright Policy </a></li>
+                    <li><a href="#">Press Kit</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 footer-col">
+                <h3 class="ft-title">Shop</h3>
+                <ul class="ft-list list-h">
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Shipping Metods</a></li>
+                    <li><a href="#">Career</a></li>
+                    <li><a href="assets/pages/contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 foot-cl">
+                <p>Shoper is made with love in Warsaw,<br>2014 &copy; Template By
+                    <a href="http://w3layouts.com/">W3layouts</a></p>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+<script>
+    //autocomplete
+
+    let options = {
+        url: "assets/data-json/data-autocomplete.json",
+
+        getValue: "text",
+
+        template: {
+            type: "links",
+            fields: {
+                link: "website-link"
+            }
+
+        },
+        list: {
+            match: {
+                enabled: true
+            },
+            maxNumberOfElements: 4
+        }
+
+    };
+
+    $("#input-search").easyAutocomplete(options);
+</script>
+<script type="text/javascript" src="build/scripts.min.js"></script>
+</body>
+</html>

@@ -1,33 +1,47 @@
 'use strict';
 
-$(function() {
+let getPriceData = (min, max) => {
     $("#slider-range").slider({
+        min: 5,
+        max: 300,
+        values: [30, 120],
         range: true,
-        min: 0,
-        max: 500,
-        values: [ 50, 300 ],
         slide: function( event, ui ) {
-            $("#amount").val( "€" + ui.values[ 0 ] + " - €" + ui.values[ 1 ] );
+            $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
         }
     });
-    $("#amount").val( "€" + $("#slider-range").slider("values", 0 ) +
-        " - €" + $("#slider-range").slider( "values", 1 ) );
+
+    $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
+        " - $" + $( "#slider-range" ).slider( "values", 1 ) );
+};
+
+
+
+$('#filter_form').submit((e) => {
+    e.preventDefault();
+    const pathname = location.pathname;
+    const amountMin = $("#slider-range").slider("values", 0),
+        amountMax = $("#slider-range").slider("values", 1),
+        checkCountry = $('.country');
+    let checkedCountry = [];
+
+    for (const item of checkCountry) {
+        if ($(item).checked === true) {
+            console.log(item);
+            /*checkedCountry.push(item.val());*/
+        }
+    }
+
+    console.log(amountMin, amountMax, checkedCountry);
+    /*$.ajax({
+        url: `${pathname}/search`,
+        type: 'POST',
+        dataType: 'html',
+        data: `minPrice=1&maxPrice=2&country=3&brand=4&size=5`,
+    })
+        .done((data) => {
+            console.log(data);
+        });*/
 });
 
-$(function(){
-    // let output = $('#output'); // блок вывода информации
-    $('filter_form').on('click', function(){
-        $.ajax({
-            url: '#', // путь к php-обработчику
-            type: 'GET', // метод передачи данных
-            dataType: 'json', // тип ожидаемых данных в ответе
-            data: {minPrice: '', maxPrice: '', country: '', brand: '', size: ''}, // данные, которые передаем на сервер
-
-            success: function(json){ // функция, которая будет вызвана в случае удачного завершения запроса к серверу
-                // json - переменная, содержащая данные ответа от сервера. Обзывайте её как угодно ;)
-                // output.html(json); // выводим на страницу данные, полученные с сервера
-            }
-        });
-    });
-});
 
