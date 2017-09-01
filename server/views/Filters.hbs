@@ -2,8 +2,8 @@
     <!--Price range-->
     <div class="range_filter">
         <p>
-            <label for="amount">Price range:</label>
-            <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+            <strong>Price range: </strong>
+            <input type="text" id="amount" readonly>
         </p>
         <div id="slider-range"></div>
     </div>
@@ -14,8 +14,8 @@
         <p><strong>Country:</strong></p>
         <div class="colors_filter_scroll">
             {{#each country}}
-                <input type='checkbox' id="ch1" value={{@index}}>
-                <label for="ch1">{{this}}</label><br/>
+                <input type='checkbox' class="country" id="ch{{@index}}" value={{this}}>
+                <label for="ch{{@index}}">{{this}}</label><br/>
             {{/each}}
         </div>
     </div>
@@ -29,7 +29,7 @@
         <select name="brands">
             <option selected="selected">-- brand--</option>
             {{#each brands}}
-                <option value={{@index}}>{{this}}</option>
+                <option value={{this}}>{{this}}</option>
             {{/each}}
         </select>
     </div>
@@ -40,8 +40,8 @@
         <p><strong>Size:</strong></p>
         <div class="size_filter_scroll">
             {{#each sizes}}
-                <input type='checkbox' id="s1" value={{@index}}>
-                <label for="s1">{{this}}</label>
+                <input type='checkbox' id="s{{@index}}" value={{@index}}>
+                <label for="s{{@index}}">{{this}}</label>
             {{/each}}
         </div>
     </div>
