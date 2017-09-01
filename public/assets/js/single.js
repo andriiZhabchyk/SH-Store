@@ -1,12 +1,15 @@
+'use strict';
+
 var d = document,
     itemBox = d.querySelectorAll('.page_single'), // блок каждого товара
-    cartCont = d.getElementById('cart_content'); // блок вывода данных корзины
+    cartCont = d.getElementById('cart_content');// блок вывода данных корзины
+
 
 // Кнопка удалить
 // itemDelete = document.createElement('button');
 // itemDelete.className = "deleteItem";
 // itemDelete.innerHTML = "<STRONG> X </STRONG>";
-// parentBox.appendChild(itemDelete);
+// itemBox.appendChild(itemDelete);
 
 // Функция кроссбраузерной установка обработчика событий
 function addEvent(elem, type, handler){
@@ -40,7 +43,6 @@ function addToCart(e){
         itemPrice = parentBox.querySelectorAll('.item_price')[0].innerText;// стоимость товара
 
 
-
     if(cartData.hasOwnProperty(itemId)){ // если такой товар уже в корзине, то добавляем +1 к его количеству
         cartData[itemId][2] += 1;
     } else { // если товара в корзине еще нет, то добавляем в объект
@@ -56,15 +58,17 @@ function addToCart(e){
 for(var i = 0; i < itemBox.length; i++){
     addEvent(itemBox[i].querySelector('.add_item'), 'click', addToCart);
 }
+
 // Открываем корзину со списком добавленных товаров
 function openCart(e){
     var cartData = getCartData(), // вытаскиваем все данные корзины
         totalItems = '';
     // если что-то в корзине уже есть, начинаем формировать данные для вывода
     if(cartData !== null){
-        totalItems = '<table class="shopping_list"><tr><th>Description</th><th>Price</th><th>Count</th><th></th></tr>';
+        totalItems = '<table class="shopping_list"><tr><th>Description</th><th>Price</th><th>Count</th><th>Ammount</th></tr>';
         for(var items in cartData){
             totalItems += '<tr>';
+
             for(var i = 0; i < cartData[items].length; i++){
                 totalItems += '<td>' + cartData[items][i] + '</td>';
             }
@@ -79,11 +83,21 @@ function openCart(e){
     return false;
 }
 
+function showDelivery() {
+    var orderData = d.getElementById('data_order');// блок вывода формы подтверждения заказа
+    orderData.style.display = 'block';
+}
+//
 // openCart();
+addEvent(d.getElementById('show_basket'), 'click', openCart);
 /* Открыть корзину */
-addEvent(d.getElementById('checkout'), 'click', openCart);
+addEvent(d.getElementById('checkout'), 'click', showDelivery);
+
 /* Очистить корзину */
 addEvent(d.getElementById('clear_cart'), 'click', function(e){
     localStorage.removeItem('cart');
     cartCont.innerHTML = 'Корзина очищена';
 });
+
+
+
