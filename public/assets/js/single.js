@@ -1,15 +1,8 @@
 'use strict';
 
-var d = document,
-    itemBox = d.querySelectorAll('.page_single'), // блок каждого товара
-    cartCont = d.getElementById('cart_content');// блок вывода данных корзины
+let itemBox = document.querySelectorAll('.page_single'), // блок каждого товара
+    cartCont = document.getElementById('cart_content');// блок вывода данных корзины
 
-
-// Кнопка удалить
-// itemDelete = document.createElement('button');
-// itemDelete.className = "deleteItem";
-// itemDelete.innerHTML = "<STRONG> X </STRONG>";
-// itemBox.appendChild(itemDelete);
 
 // Функция кроссбраузерной установка обработчика событий
 function addEvent(elem, type, handler){
@@ -63,16 +56,20 @@ for(var i = 0; i < itemBox.length; i++){
 function openCart(e){
     var cartData = getCartData(), // вытаскиваем все данные корзины
         totalItems = '';
+
     // если что-то в корзине уже есть, начинаем формировать данные для вывода
     if(cartData !== null){
-        totalItems = '<table class="shopping_list"><tr><th>Description</th><th>Price</th><th>Count</th><th>Ammount</th></tr>';
+        totalItems = '<table class="shopping_list"><tr><th>Description</th><th>Price</th><th>Count</th><th>Ammount</th><th>Remove</th></tr>';
         for(var items in cartData){
             totalItems += '<tr>';
 
             for(var i = 0; i < cartData[items].length; i++){
                 totalItems += '<td>' + cartData[items][i] + '</td>';
             }
-            totalItems += '</tr>';
+            console.log(cartData[items][2]);
+            totalItems += '<td>' + '' + '</td>';
+            totalItems += '<td><button class="deleteItem">X</button></td>';
+            totalItems += `</tr>`;
         }
         totalItems += '</table>';
         cartCont.innerHTML = totalItems;
@@ -84,17 +81,16 @@ function openCart(e){
 }
 
 function showDelivery() {
-    var orderData = d.getElementById('data_order');// блок вывода формы подтверждения заказа
+    var orderData = document.getElementById('data_order');// блок вывода формы подтверждения заказа
     orderData.style.display = 'block';
 }
 //
-// openCart();
-addEvent(d.getElementById('show_basket'), 'click', openCart);
+/*addEvent(d.getElementById('show_basket'), 'click', openCart);*/
 /* Открыть корзину */
-addEvent(d.getElementById('checkout'), 'click', showDelivery);
+addEvent(document.getElementById('checkout'), 'click', showDelivery);
 
 /* Очистить корзину */
-addEvent(d.getElementById('clear_cart'), 'click', function(e){
+addEvent(document.getElementById('clear_cart'), 'click', function(e){
     localStorage.removeItem('cart');
     cartCont.innerHTML = 'Корзина очищена';
 });

@@ -73,6 +73,7 @@ app.get('/:category/:subcategory/filters', (req, res) => {
     });
 });*/
 
+/*
 app.get('/:category/:subcategory/:id', (req, res) => {
     let itemData = {
         category: req.params.category,
@@ -88,12 +89,13 @@ app.get('/:category/:subcategory/:id', (req, res) => {
                     itemData.item = item;
                     res.render('single.hbs', itemData);
                     break;
-                    /*res.send(itemData);*/
+                    /!*res.send(itemData);*!/
                 }
             }
         }
     });
-});
+});*/
+
 
 
 

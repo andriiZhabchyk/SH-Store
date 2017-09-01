@@ -26,9 +26,8 @@ $('#filter_form').submit((e) => {
     let checkedCountry = [];
 
     for (const item of checkCountry) {
-        if ($(item).checked === true) {
-            console.log(item);
-            /*checkedCountry.push(item.val());*/
+        if (item.checked === true) {
+            checkedCountry.push(item.value);
         }
     }
 
