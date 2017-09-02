@@ -203,6 +203,23 @@ input:-ms-input-placeholder {text-overflow:ellipsis;}
   padding-right: 100px;
 }
 
+.input_text::-webkit-input-placeholder { /* WebKit browsers */
+  color:    white;
+  opacity: 0.5;
+}
+.input_text:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color:    white;
+  opacity: 0.5;
+}
+.input_text::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color:    white;
+  opacity: 0.5;
+}
+.input_text:-ms-input-placeholder { /* Internet Explorer 10+ */
+  color:    white;
+  opacity: 0.5;
+}
+
 .block_subscribe .actions {
   float: left;
   width: 34.375%;

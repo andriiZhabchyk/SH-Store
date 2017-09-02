@@ -259,7 +259,8 @@
   padding-left: 0;
   position: relative;
   top: -1px;
-  background: linear-gradient(135deg, #ffffff, #f3ebe9 60%, #fff7f6) ;
+  /*background: linear-gradient(135deg, #ffffff, #f3ebe9 60%, #fff7f6) ;*/
+  background-color: #fff7f6;
 
 }
 .easy-autocomplete-container ul li, .easy-autocomplete-container ul .eac-category {
@@ -272,11 +273,11 @@
   border-radius: 0 0 2px 2px;
   border-width: 0 1px 1px;
 }
-.easy-autocomplete-container ul li.selected {
+.easy-autocomplete-container ul li.selected  {
   background-color: #f68236;
-  /*background: linear-gradient(135deg, #f68236, #ead9d5 60%, #ecd0ca) ;*/
   cursor: pointer;
   color: #ffffff;
+
 }
 .easy-autocomplete-container ul li.selected div {
   font-weight: normal;

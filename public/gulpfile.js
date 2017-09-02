@@ -19,7 +19,6 @@ let path = {
             './node_modules/slick-carousel/slick/slick-theme.less',
             './node_modules/jquery-ui-slider/jquery-ui.css',
             './node_modules/font-awesome/css/font-awesome.css',
-            // './node_modules/easy-autocomlete/dist/easy-autocomplete.css',
             './assets/styles/index.less'
         ],
         dependencies: [
@@ -35,7 +34,9 @@ let path = {
             './node_modules/bootstrap/dist/js/bootstrap.js',
             './node_modules/slick-carousel/slick/slick.js',
             // './node_modules/easy-autocomlete/dist/jquery.easy-autocomplete.js',
+            // './assets/autocomplete/jquery.easy-autocomplete.js',
             './assets/js/*.js',
+
 
         ],
         name: 'scripts',

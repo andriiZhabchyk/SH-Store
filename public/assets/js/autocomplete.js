@@ -1,17 +1,27 @@
-
-// //autocomplete
+// $(document).ready(function () {
+//     let options = {
+//         url: "../../assets/data-json/data-autocomplete.json" || "assets/data-json/data-autocomplete.json",
 //
-// let options = {
-//     url: "assets/data-json/data-autocomplete.json",
 //
-//     getValue: "name",
+//         getValue: "text",
 //
-//     list: {
-//         match: {
-//             enabled: true
+//         template: {
+//             type: "links",
+//             fields: {
+//                 link: "website-link" || "../../website-link"
+//             }
+//
 //         },
-//         maxNumberOfElements: 4
-//     }
-// };
+//         list: {
+//             match: {
+//                 enabled: true
+//             },
+//             maxNumberOfElements: 4
+//         }
 //
-// $("#input-search").easyAutocomplete(options);
+//     };
+//
+//     $("#input-search").easyAutocomplete(options);
+// });
+
+

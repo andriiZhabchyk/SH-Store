@@ -82,11 +82,11 @@
                              <div class="close" onclick="searchToggle(this, event);"></div>
                          </div>
                      </li>
-                     <li>
-                         <span></span><a href="../../assets/pages/login.html">Log In</a>
+                     <li class="log-in">
+                         <a href="../../assets/pages/login.html">Log In</a>
                      </li>
-                     <li>
-                         <span class="bascket"></span><a href="../../assets/pages/bascket.html">Basket(0)</a>
+                     <li class="basket">
+                         <a href="../../assets/pages/bascket.html">Basket(0)</a>
                      </li>
                  </ul>
              </div>
@@ -447,34 +447,33 @@
         </div>
     </div>
 </div>
-
+<script type="text/javascript" src="../../build/scripts.min.js"></script>
 <script>
     //autocomplete
+    $(document).ready(function () {
+        let options = {
+            url: "../../assets/data-json/data-autocomplete.json",
 
-    let options = {
-        url: "../../assets/data-json/data-autocomplete.json",
+            getValue: "text",
 
-        getValue: "text",
-
-        template: {
-            type: "links",
-            fields: {
-                link: "../../website-link"
-            }
-        },
-        list: {
-            match: {
-                enabled: true
+            template: {
+                type: "links",
+                fields: {
+                    link: "../../website-link"
+                }
             },
-            maxNumberOfElements: 4
-        }
+            list: {
+                match: {
+                    enabled: true
+                },
+                maxNumberOfElements: 4
+            }
 
-    };
+        };
 
-    $("#input-search").easyAutocomplete(options);
+        $("#input-search").easyAutocomplete(options);
+    })
 
 </script>
-
-<script type="text/javascript" src="../../build/scripts.min.js"></script>
 </body>
 </html>
