@@ -1,16 +1,10 @@
-.errorStyle {
-  color: #f68210;
-  display: inline;
-  padding-left: 20px;
-  font-size: 14px;
-  text-transform: uppercase;
-}
 
 
 #errorFirstName,
 #errorLastName,
 #errorEmptyPass,
-#errorPassConfirm{
+#errorPassConfirm,
+#errorUserRegName{
   color: #f68210;
   display: inline-block;
   padding-left: 100px;
@@ -49,7 +43,7 @@
   text-transform: uppercase;
 }
 
-#errorEmailNewsLetter {
+#errorEmailNewsLetter{
   position: absolute;
   display: none;
   width:250px;
@@ -61,6 +55,9 @@
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6), 0 0 40px rgba(0, 0, 0, 0.0) inset;
   color: #f68210;
   font-weight:700;
+  font-size: 14px;
+  text-transform: uppercase;
+
 
   &:after{
     content: '';
@@ -73,6 +70,84 @@
   }
 }
 
+div.text {
+  position: relative;
+}
+
+.register-top-grid, .register-bottom-grid {
+  div {
+    position: relative;
+  }
+}
+
+ #errorName,
+ #errorPassword,
+ #errorUserRegName{
+  position: absolute;
+  display: none;
+  height:50px;
+  top:-137%;
+  left:20%;
+   font-size: 14px;
+   text-transform: uppercase;
+  text-align: center;
+  line-height: 50px;
+   background-color: #f68236;
+  color: white;
+  font-weight:700;
+  padding: 0 10px 0 10px;
+
+  &:after{
+    content: '';
+    position: absolute;
+    right: 60px;
+    top: 40px;
+    border: 20px solid transparent;
+    border-top: 20px solid #f68236;
+
+  }
+}
+
+
+#errorUserRegName,
+#errorFirstName,
+#errorLastName,
+#errorEmail,
+#errorPass,
+#errorPassConfirm{
+  position: absolute;
+  display: none;
+  height:50px;
+  top:-55%;
+  left:20%;
+  font-size: 14px;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 50px;
+  background-color: #f68236;
+  color: white;
+  font-weight:700;
+  padding: 0 10px 0 10px;
+
+  &:after{
+    content: '';
+    position: absolute;
+    right: 60px;
+    top: 40px;
+    border: 20px solid transparent;
+    border-top: 20px solid #f68236;
+
+  }
+}
+
+
 #btnNewsLetter {
   position: relative;
 }
+
+input:focus,
+textarea:focus,
+select:focus {
+  background-color: #ffeadd;
+}
+
