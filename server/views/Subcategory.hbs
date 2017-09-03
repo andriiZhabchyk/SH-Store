@@ -120,10 +120,8 @@
                 <div class="colors_filter">
                     <p><strong>Country:</strong></p>
                     <div class="colors_filter_scroll">
-                        {{#each country}}
-                            <input type='checkbox' id="ch1" value={{@index}}>
-                            <label for="ch1">{{this}}</label><br/>
-                        {{/each}}
+                        <input type='checkbox' id="ch1" value=''>
+                        <label for="ch1"></label><br/>
                     </div>
                 </div>
                 <!--<p>Your favourite color:</p>-->
@@ -132,13 +130,11 @@
 
                 <!--Brand filter-->
                 <div class="brands_filter">
-                    <p><strong>Brand:</strong></p>
-                    <select name="brands">
-                        <option selected="selected">-- brand--</option>
-                        {{#each brands}}
-                            <option value={{@index}}>{{this}}</option>
-                        {{/each}}
-                    </select>
+                    <p><strong>Brands:</strong></p>
+                    <div class="colors_filter_scroll">
+                        <input type='checkbox' id="ch1" value=''>
+                        <label for="ch1"></label><br/>
+                    </div>
                 </div>
                 <!--End brand_filter-->
 
@@ -146,10 +142,8 @@
                 <div class="size_filter">
                     <p><strong>Size:</strong></p>
                     <div class="size_filter_scroll">
-                        {{#each sizes}}
-                            <input type='checkbox' id="s{{@index}}" value={{@index}}>
-                            <label for="s{{@index}}">{{this}}</label>
-                        {{/each}}
+                        <input type='checkbox' id="s1" value=''>
+                        <label for="s1"></label>
                     </div>
                 </div>
                 <button id="submit_filter">Filter out</button>

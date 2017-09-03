@@ -28,4 +28,16 @@ $('#getItemInfo').on('click', () => {
     });
 });
 
+let getFilterItems = (pathname, searchParam) => {
+    $.ajax({
+        url: `${pathname}/search`,
+        type: 'POST',
+        dataType: 'html',
+        data: searchParam
+    })
+        .done((data) => {
+            $('#coat-row').html('').append(data);
+        });
+};
+
 

@@ -25,13 +25,13 @@
 
     <!--Brand filter-->
     <div class="brands_filter">
-        <p><strong>Brand:</strong></p>
-        <select name="brands">
-            <option selected="selected">-- brand--</option>
+        <p><strong>Brands:</strong></p>
+        <div>
             {{#each brands}}
-                <option value={{this}}>{{this}}</option>
+                <input type='checkbox' class="brands" id="bh{{@index}}" value={{this}}>
+                <label for="bh{{@index}}">{{this}}</label><br/>
             {{/each}}
-        </select>
+        </div>
     </div>
     <!--End brand_filter-->
 
@@ -40,7 +40,7 @@
         <p><strong>Size:</strong></p>
         <div class="size_filter_scroll">
             {{#each sizes}}
-                <input type='checkbox' id="s{{@index}}" value={{@index}}>
+                <input type='checkbox' class="sizes" id="s{{@index}}" value={{this}}>
                 <label for="s{{@index}}">{{this}}</label>
             {{/each}}
         </div>
