@@ -1,53 +1,53 @@
 [ 
   {
     "text": "Women",
-    "website-link": "assets/pages/women.html",
-    "../../website-link": "../../assets/pages/women.html"
+    "website-link": "/shop/women",
+    "../../website-link": "/shop/women"
   },
   {
     "text": "Men",
-    "website-link": "assets/pages/men.html",
-    "../../website-link": "../../assets/pages/men.html"
+    "website-link": "/shop/men",
+    "../../website-link": "/shop/men"
   },
   {
     "text": "New Arrivals",
-    "website-link": "assets/pages/new_arrivels.html",
-    "../../website-link": "../../assets/pages/new_arrivels.html"
+    "website-link": "/shop/new_arrivels",
+    "../../website-link": "/shop/new_arrivels"
   },
   {
     "text": "Women coats",
-    "website-link": "assets/pages/women_coats.html",
-    "../../website-link": "../../assets/pages/women_coats.html"
+    "website-link": "/shop/women/coats",
+    "../../website-link": "/shop/women/coats"
   },
   {
     "text": "Dresses",
-    "website-link": "assets/pages/women_dresses.html",
-    "../../website-link": "../../assets/pages/women_dresses.html"
+    "website-link": "/shop/women/dresses",
+    "../../website-link": "/shop/women/dresses"
   },
   {
     "text": "Women shoes",
-    "website-link": "assets/pages/women_shoes.html",
-    "../../website-link": "../../assets/pages/women_shoes.html"
+    "website-link": "/shop/women/shoes",
+    "../../website-link": "/shop/women/shoes"
   },
   {
     "text": "Men jackets",
-    "website-link": "assets/pages/men_jackets.html",
-    "../../website-link": "../../assets/pages/men_jackets.html"
+    "website-link": "/shop/men/jackets",
+    "../../website-link": "/shop/men/jackets"
   },
   {
     "text": "Men suits",
-    "website-link": "assets/pages/men_suits.html",
-    "../../website-link": "../../assets/pages/men_suits.html"
+    "website-link": "/shop/men/suits",
+    "../../website-link": "/shop/men/suits"
   },
   {
     "text": "Men shoes",
-    "website-link": "assets/pages/men_shoes.html",
-    "../../website-link": "../../assets/pages/men_shoes.html"
+    "website-link": "/shop/men/shoes",
+    "../../website-link": "/shop/men/shoes"
   },
   {
     "text": "Men T-shirts",
-    "website-link": "assets/pages/men_t_shirts.html",
-    "../../website-link": "../../assets/pages/men_t_shirts.html"
+    "website-link": "/shop/men/t-shirts",
+    "../../website-link": "/shop/men/t-shirts"
   }
 
   ]

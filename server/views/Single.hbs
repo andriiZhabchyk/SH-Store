@@ -1,12 +1,11 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Hazy Shade | Single</title>
+    <title>Hazy Shade | {{this.[0].subcategory}} | {{this.[0].items.id}}</title>
     <link rel="stylesheet" href="../../build/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="../../node_modules/font-awesome/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="../../assets/autocomplete/easy-autocomplete.css">
     <script src="../../node_modules/jquery/dist/jquery.js"></script>
     <script src="../../assets/autocomplete/jquery.easy-autocomplete.js"></script>
 </head>
@@ -15,57 +14,57 @@
     <div id="demo_top_wrapper">
         <div id="sticky_navigation">
             <div class="navigation">
-                <div class="logo"><a href="../../index.html">SH</a></div>
+                <div class="logo"><a href="/">SH</a></div>
                 <span class="menu"></span>
                 <div class="navig">
                     <ul>
                         <li>
-                            <a class="navig-a" href="../../assets/pages/women.html">Women</a>
+                            <a class="navig-a" href="/women">Women</a>
                             <div class="dropdown-nav">
                                 <div class="row">
                                     <div class="col-md-3">
-                                        <h3><a href="../../assets/pages/women_coats.html">COATS</a></h3>
-                                        <a class="item" href="../../assets/pages/women_coats.html"><div class="img-women-coats"></div></a>
+                                        <h3><a href="/women/coats">COATS</a></h3>
+                                        <a class="item" href="/women/coats"><div class="img-women-coats"></div></a>
                                     </div>
                                     <div class="col-md-3">
-                                        <h3><a href="../../assets/pages/women_dresses.html">DRESSES</a></h3>
-                                        <a class="item" href="../../assets/pages/women_dresses.html"><div class="img-women-dresses"></div></a>
+                                        <h3><a href="/women/dresses">DRESSES</a></h3>
+                                        <a class="item" href="/women/dresses"><div class="img-women-dresses"></div></a>
                                     </div>
                                     <div class="col-md-3">
-                                        <h3><a href="../../assets/pages/women_shoes.html">SHOES</a></h3>
-                                        <a class="item" href="../../assets/pages/women_shoes.html"><div class="img-women-shoes"></div></a>
+                                        <h3><a href="/women/heels">HEELS</a></h3>
+                                        <a class="item" href="/women/heels"><div class="img-women-shoes"></div></a>
                                     </div>
                                     <div class="col-md-3">
-                                        <h3><a href="../../assets/pages/women_tops.html">TOPS</a></h3>
-                                        <a class="item" href="../../assets/pages/women_tops.html"><div class="img-women-tops"></div></a>
+                                        <h3><a href="/women/tops">TOPS</a></h3>
+                                        <a class="item" href="/women/tops"><div class="img-women-tops"></div></a>
                                     </div>
                                 </div>
                             </div>
                         </li>
                         <li>
-                            <a class="navig-a" href="../../assets/pages/men.html">Men</a>
+                            <a class="navig-a" href="/men">Men</a>
                             <div class="dropdown-nav">
                                 <div class="row">
                                     <div class="col-md-3">
-                                        <h3><a href="../../assets/pages/men_jackets.html">JACKETS</a></h3>
-                                        <a class="item" href="../../assets/pages/men_jackets.html"><div class="img-men-jackets"></div></a>
+                                        <h3><a href="/men/jackets">JACKETS</a></h3>
+                                        <a class="item" href="/men/jackets"><div class="img-men-jackets"></div></a>
                                     </div>
                                     <div class="col-md-3">
-                                        <h3><a href="../../assets/pages/men_suits.html">SUITS</a></h3>
-                                        <a class="item" href="../../assets/pages/men_suits.html"><div class="img-men-suits"></div></a>
+                                        <h3><a href="/men/suits">SUITS</a></h3>
+                                        <a class="item" href="/men/suits"><div class="img-men-suits"></div></a>
                                     </div>
                                     <div class="col-md-3">
-                                        <h3><a href="../../assets/pages/men_t_shirts.html">T-SHIRTS</a></h3>
-                                        <a class="item" href="../../assets/pages/men_t_shirts.html"><div class="img-men-t-shirts"></div></a>
+                                        <h3><a href="/men/t-shirts">T-SHIRTS</a></h3>
+                                        <a class="item" href="/men/t-shirts"><div class="img-men-t-shirts"></div></a>
                                     </div>
                                     <div class="col-md-3">
-                                        <h3><a href="../../assets/pages/men_shoes.html">SHOES</a></h3>
-                                        <a class="item" href="../../assets/pages/men_shoes.html"><div class="img-men-shoes"></div></a>
+                                        <h3><a href="/men/shoes">SHOES</a></h3>
+                                        <a class="item" href="/men/shoes"><div class="img-men-shoes"></div></a>
                                     </div>
                                 </div>
                             </div>
                         </li>
-                        <li><a class="navig-a" href="../../assets/pages/new_arrivels.html">New Arrivels</a>
+                        <li><a class="navig-a" href="/new_arrivels">New Arrivels</a>
                             <div class="dropdown-nav">
                                 <div class="row">
                                     <div class="col-md-3">
@@ -87,7 +86,7 @@
                                 </div>
                             </div>
                         </li>
-                        <li><a class="navig-a" href="../../assets/pages/about.html">About</a></li>
+                        <li><a class="navig-a" href="/about">About</a></li>
                     </ul>
                 </div>
                 <div class="clearfix"></div>
@@ -104,7 +103,7 @@
                         </div>
                     </li>
                     <li>
-                        <span></span><a href="../../assets/pages/login.html">Log In</a>
+                        <span></span><a href="/login">Log In</a>
                     </li>
                     <li>
                         <span class="bascket"></span><a href="../../assets/pages/bascket.html">Basket(0)</a>
@@ -120,8 +119,8 @@
             <div class="pag-nav">
                 <ul class="p-list">
                     <li><a href="/">Home</a></li> |
-                    <li><a href="/{{category}}"> {{category}}</a></li> |
-                    <li><a href="/{{category}}/{{subcategory}}"> {{subcategory}}</a></li>
+                    <li><a href="/{{this.[0].category}}"> {{this.[0].category}}</a></li> |
+                    <li><a href="/{{this.[0].category}}/{{this.[0].subcategory}}"> {{this.[0].subcategory}}</a></li>
                 </ul>
             </div>
 
@@ -132,22 +131,22 @@
 
                         <div class="col-md-7">
                             <div class="left_single">
-                                <span class="demowrap"><img id="demo" src="{{item.image}}"/></span>
+                                <span class="demowrap"><img id="demo" src="{{this.[0].items.image}}"/></span>
                             </div>
                         </div>
 
                         <div class="col-md-5">
                             <div class="right_single">
                                 <div class="name_single">
-                                    <h3 class="item_name">{{item.title}}</h3>
+                                    <h3 class="item_name">{{this.[0].items.title}}</h3>
                                 </div>
 
                                 <div class="article_single">
-                                    <p class="article" data-id="12345">Article number: {{item.id}}</p>
+                                    <p class="article" data-id="12345">Article number: {{this.[0].items.id}}</p>
                                 </div>
 
                                 <div class="price_single">
-                                    <h3 class="item_price">&euro; {{item.price}}</h3>
+                                    <h3 class="item_price">&euro; {{this.[0].items.price}}</h3>
                                 </div>
 
                                 <div class="color_single">
@@ -161,29 +160,29 @@
                                 <div class="size_single">
                                     <span class="span_single">Size</span>
                                     <ul class="size-list">
-                                        {{#each item.size}}
+                                        {{#each this.[0].items.size}}
                                             <li><a class="circle" href="#">&nbsp {{this}} &nbsp</a></li>
                                         {{/each}}
                                     </ul>
                                 </div>
 
                                 <div class="buy_single">
-                                    <button class="add_item button_single btn btn-lg btn-primary" data-id="{{item.id}}">Add to Basket</button>
+                                    <button class="add_item button_single btn btn-lg btn-primary" data-id="{{this.[0].items.id}}">Add to Basket</button>
                                 </div>
 
                                 <div class="tab_info">
                                     <ul class="nav nav-tabs">
                                         <li class="active" data-toggle="tab" href="#description">
-                                            <h4>Description</h4>
+                                            <h4 class="tabs">Description</h4>
                                         </li>
                                         <li data-toggle="tab" href="#delivery">
-                                            <h4>Delivery</h4>
+                                            <h4 class="tabs">Delivery</h4>
                                         </li>
                                         <li data-toggle="tab" href="#returns">
-                                            <h4>Returns</h4>
+                                            <h4 class="tabs">Returns</h4>
                                         </li>
                                         <li data-toggle="tab" href="#comments">
-                                            <h4>Comments</h4>
+                                            <h4 class="tabs">Comments</h4>
                                         </li>
                                     </ul>
 
@@ -195,14 +194,14 @@
                                             <div class="description_single">
                                                 <p>Content & care</p>
                                                 <ul class="content_single">
-                                                    {{#each item.description.care}}
+                                                    {{#each this.[0].items.description.care}}
                                                         <li> {{this}} </li>
                                                     {{/each}}
 
                                                 </ul>
                                                 <p>Details & fit</p>
                                                 <ul class="details_single">
-                                                    {{#each item.description.details}}
+                                                    {{#each this.[0].items.description.details}}
                                                         <li> {{this}} </li>
                                                     {{/each}}
                                                 </ul>
@@ -363,32 +362,6 @@
         </div>
     </div>
 </div>
-<script>
-    //autocomplete
-
-    let options = {
-        url: "../../assets/data-json/data-autocomplete.json",
-
-        getValue: "text",
-
-        template: {
-            type: "links",
-            fields: {
-                link: "../../website-link"
-            }
-        },
-        list: {
-            match: {
-                enabled: true
-            },
-            maxNumberOfElements: 4
-        }
-
-    };
-
-    $("#input-search").easyAutocomplete(options);
-
-</script>
 <script type="text/javascript" src="../../build/scripts.min.js"></script>
 </body>
 </html>

@@ -1,5 +1,6 @@
 'use strict';
 
+//get filters params to subcategory filter part
 let getSubcategoryData = () => {
     const pathname = location.pathname;
     $.ajax({
@@ -12,22 +13,7 @@ let getSubcategoryData = () => {
     });
 };
 
-$('#getItemInfo').on('click', () => {
-    let elem = document.getElementById('item-info');
-    elem = elem.innerHTML;
-
-    let target = $(event.currentTarget).parent().parent();
-    target = target.attr('data-id');
-
-    $.ajax({
-        url:  `${elem}/${target}`,
-        method: "GET",
-        dataType: 'html'
-    }).done((data) => {
-        console.log(data);
-    });
-});
-
+//get items elems from filter data
 let getFilterItems = (pathname, searchParam) => {
     $.ajax({
         url: `${pathname}/search`,

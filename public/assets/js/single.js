@@ -52,24 +52,40 @@ for(var i = 0; i < itemBox.length; i++){
     addEvent(itemBox[i].querySelector('.add_item'), 'click', addToCart);
 }
 
+function minusCartData() {
+    const target = this.event.currentTarget;
+    let minus = target.nextSibling;
+
+    minus.innerHTML = minus.innerHTML - 1;
+
+    if (minus.innerHTML == 0) {
+        deleteCartData()
+    }
+}
+
+function plusCartData() {
+    const target = this.event.currentTarget;
+    let plus = target.previousSibling;
+
+    plus.innerHTML = +(plus.innerHTML) + 1;
+}
+
+function deleteCartData(){
+    const target = this.event.currentTarget;
+    const parent = target.parentNode;
+    const itemElem = parent.parentNode;
+    itemElem.style.display = 'none';
+
+    console.log('OK');
+    /*localStorage.removeItem('cart');
+    cartCont.innerHTML = 'Корзина очищена';*/
+}
+
 // Открываем корзину со списком добавленных товаров
 function openCart(e){
       var cartData = getCartData(),
           items,// вытаскиваем все данные корзины
        totalItems = '';
-
-    function minusCartData() {
-        cartData[items][2] -= 1;
-    }
-
-    function plusCartData() {
-        cartData[items][2] += 1;
-    }
-
-    function deleteCartData(){
-        localStorage.removeItem('cart');
-        cartCont.innerHTML = 'Корзина очищена';
-    }
 
     // если что-то в корзине уже есть, начинаем формировать данные для вывода
     if(cartData !== null){
@@ -81,13 +97,13 @@ function openCart(e){
                 totalItems += '<td>' + cartData[items][0] + '</td>';
                 totalItems += '<td>' + cartData[items][1] + '</td>';
                 totalItems += '<td>' + '<button class="minusItem" id="minusItem" onclick="minusCartData()">-</button>'
-                    + cartData[items][2] + '<button class="plusItem" id="plusItem" onclick="plusCartData()">+</button>' + '</td>';
+                    + '<div class="count">' + cartData[items][2] + '</div>' + '<button class="plusItem" id="plusItem" onclick="plusCartData()">+</button>' + '</td>';
                 totalItems += '<td>' + '<div class="ammount"></div>' + '</td>';
                 totalItems += '<td><button class="deleteItem" id="deleteItem" onclick="deleteCartData()">X</button></td>';
                 break;
             }
 
-            console.log(cartData[items][2]);
+            console.log(cartData[items][1]);
             // totalItems += '<td>' + ' ' + '</td>';
             // totalItems += '<td><button class="deleteItem">X</button></td>';
             totalItems += '</tr>';}

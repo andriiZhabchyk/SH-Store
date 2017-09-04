@@ -177,7 +177,7 @@ $(document).ready(function () {
             }
 
             //Email
-            let EmailRegExp =/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            let EmailRegExp =/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,5})+$/;
 
             if (formElements[i].name == 'emailRegistration') {
                 if (formElements[i].value === "") {

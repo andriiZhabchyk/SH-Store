@@ -6,9 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="../../node_modules/font-awesome/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="../../assets/autocomplete/easy-autocomplete.css">
-    <script src="../../node_modules/jquery/dist/jquery.js"></script>
-    <script src="../../assets/autocomplete/jquery.easy-autocomplete.js"></script>
 </head>
 <body onload="openCart()">
 <div class="header">
@@ -120,7 +117,7 @@
         <div class="content">
             <div class="pag-nav">
                 <ul class="p-list">
-                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li class="act">&nbsp;Basket</li>
                 </ul>
             </div>
@@ -254,32 +251,6 @@
         </div>
     </div>
 </div>
-<script>
-    //autocomplete
-
-    let options = {
-        url: "../../assets/data-json/data-autocomplete.json",
-
-        getValue: "text",
-
-        template: {
-            type: "links",
-            fields: {
-                link: "../../website-link"
-            }
-        },
-        list: {
-            match: {
-                enabled: true
-            },
-            maxNumberOfElements: 4
-        }
-
-    };
-
-    $("#input-search").easyAutocomplete(options);
-
-</script>
 <script type="text/javascript" src="../../build/scripts.min.js"></script>
 </body>
 </html>

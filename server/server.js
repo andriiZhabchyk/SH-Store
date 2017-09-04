@@ -5,18 +5,24 @@ const MongoClient = require('mongodb').MongoClient;
 const ObjectID = require('mongodb').ObjectID;
 const bodyParser = require('body-parser');
 const db = require('./config/db');
-const app = express();
 const path = require('path');
 const cors = require('cors');
+const mongoose = require('mongoose');
+const waterfall = require('async-waterfall');
+const fs = require('fs');
+const http = require('http');
 
 let dBase;
-let subcategory = {};
+
+const app = express();
 
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json())
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(cors());
 
-app.get('/:category', function root(req, res) {
+//
+app.get('/shop/:category', function root(req, res) {
     const category = req.params.category;
 
     let subcategory = {
@@ -24,17 +30,34 @@ app.get('/:category', function root(req, res) {
         itemSubcategory: []
     };
 
+    /*waterfall([
+     function (callback) {
+     dBase.collection(`${category}`).find({category: category}, {items: {$slice: 4}}).toArray(callback);
+     },
+     function (items, callback) {
+     if(!items) {
+     callback(null, 'Not found!');
+     } else {
+     callback(null);
+     }
+     }
+     ], function (err, result) {
+     if (err) return next(err);
+     res.render('category.hbs', result);
+     });*/
+
     dBase.collection(`${category}`).find({category: category}, {items: {$slice: 4}}).toArray((err, item) => {
         if (err) {
-            res.send({'error': 'An error has occurred'});
+            return res.send({'error': 'An error has occurred'});
         } else {
             subcategory.itemSubcategory = item;
-            res.render('category.hbs', subcategory);
+            return res.render('category.hbs', subcategory);
         }
     });
 });
 
-app.get('/:category/:subcategory', (req, res) => {
+//
+app.get('/shop/:category/:subcategory', (req, res) => {
     dBase.collection(req.params.category).findOne({subcategory: req.params.subcategory}, (err, item) => {
         if (err) {
             res.send({'error': 'An error has occurred'});
@@ -44,66 +67,88 @@ app.get('/:category/:subcategory', (req, res) => {
     });
 });
 
-app.get('/:category/:subcategory/filters', (req, res) => {
+
+//
+app.get('/shop/:category/:subcategory/filters', (req, res) => {
     const category = req.params.category,
-        subcategories = req.params.subcategory;
+        subcategories = req.params.subcategory,
+        subcategory = {};
 
     dBase.collection(category).distinct('items.size', {subcategory: subcategories}, (err, sizes) => {
-        subcategory.sizes = sizes;
+        if (err) {
+            res.send({'error': 'An error has occurred'});
+        } else {
+            subcategory.sizes = sizes;
+        }
     });
 
     dBase.collection(category).distinct('items.brand', {subcategory: subcategories}, (err, brands) => {
-        subcategory.brands = brands;
+        if (err) {
+            res.send({'error': 'An error has occurred'});
+        } else {
+            subcategory.brands = brands;
+        }
     });
 
     dBase.collection(category).distinct('items.country', {subcategory: subcategories}, (err, country) => {
-        subcategory.country = country;
-        res.render('Filters.hbs', subcategory);
-        /* res.send(subcategory);*/
+        if (err) {
+            res.send({'error': 'An error has occurred'});
+        } else {
+            subcategory.country = country;
+            res.render('Filters.hbs', subcategory);
+        }
     });
 });
 
-/*app.get('/:category/:subcategory/price', (req, res) => {
- const category = req.params.category,
- subcategories = req.params.subcategory;
 
- dBase.collection(category).findOne({subcategory: subcategories}, {$min: '$items.price'}, (err, price) => {
- res.render('Filters.hbs', subcategory);
- res.send(price);
- });
- });*/
+//
+app.get('/shop/:category/:subcategory/:id', (req, res) => {
+    let itemData = {
+        category: req.params.category,
+        subcategory: req.params.subcategory,
+        id: req.params.id
+    };
 
-/*
- app.get('/:category/:subcategory/:id', (req, res) => {
- let itemData = {
- category: req.params.category,
- subcategory: req.params.subcategory
- };
+    dBase.collection(itemData.category).aggregate(
+        {
+            $match: {subcategory: itemData.subcategory}
+        },
+        {
+            $unwind: '$items'
+        },
+        {
+            $match: {'items.id': {$eq: parseInt(itemData.id)}}
+        },
+        {
+            $project: {
+                items: 1,
+                value: '$items.value',
+                scope: '$items.scope'
+            }
+        },
+        (err, item) => {
+            if (err) {
+                return ({'error': 'An error has occurred'});
+            } else {
+                item[0].category = itemData.category;
+                item[0].subcategory = itemData.subcategory;
+                console.log(item);
+                return res.render('single.hbs', item);
+            }
+        });
+});
 
- dBase.collection(req.params.category).findOne({subcategory: req.params.subcategory}, (err, items) => {
- if (err) {
- res.send({'error': 'An error has occurred'});
- } else {
- for (let item of items.items) {
- if (item.id == req.params.id) {
- itemData.item = item;
- res.render('single.hbs', itemData);
- break;
- /!*res.send(itemData);*!/
- }
- }
- }
- });
- });*/
 
-
-app.post('/:category/:subcategory/search?', (req, res) => {
+//search data for filter data params
+app.post('/shop/:category/:subcategory/search?', (req, res) => {
     let minPrice = JSON.parse(req.body.minPrice),
         maxPrice = JSON.parse(req.body.maxPrice),
         country = req.body.country,
         brand = req.body.brands,
         size = req.body.sizes,
-        data = {},
+        data = {
+            subcategory: req.params.subcategory
+        },
         items = [];
 
     let item = {
@@ -154,21 +199,64 @@ app.post('/:category/:subcategory/search?', (req, res) => {
 });
 
 
-app.all('/', function root(req, res) {
-    res.sendFile(path.resolve('public', 'index.html'));
+//register new user
+app.post('/api/users', (req, res, next) => {
+    const firstName = req.body.firstName,
+        lastName = req.body.lastName,
+        userName = req.body.userName,
+        email = req.body.email,
+        password = req.body.password;
+
+    waterfall([
+        function (callback) {
+            dBase.collection('users').findOne({email: email}, callback);
+        },
+        function (user, callback) {
+            if (user) {
+                if (user.password === password) {
+                    callback(null, "User with this email has already register!");
+                } else {
+                    next(new HttpError(403, "Wrong password"));
+                }
+            } else {
+                const user = {
+                    firstName: firstName,
+                    lastName: lastName,
+                    userName: userName,
+                    email: email,
+                    password: password
+                };
+
+                dBase.collection('users').insert(user, function (err) {
+                    if (err) return next(err);
+                    callback(null, user)
+                });
+            }
+        }
+
+    ], function (err, user) {
+        if (err) return next(err);
+        res.status(200).json("You are successful register!");
+    });
 });
 
-app.get('/login', (req, res) => {
-    res.render('login.hbs');
+
+app.use(function (req, res) {
+    if (req.url === '/login') {
+        res.sendfile(path.join(__dirname, '../public/assets/pages', 'login.html'));
+    } else if (req.url === '/bascket') {
+        res.sendfile(path.join(__dirname, '../public/assets/pages', 'bascket.html'));
+    }
 });
 
+//start server, connect to mongodb
 MongoClient.connect(db.url, (err, database) => {
     if (err) return console.log(err);
 
     dBase = database;
-    //start server
-    app.listen(8005, () => {
-        console.log(`Server start in 8005`);
+    app.listen(8000, () => {
+        console.log(`Server start in 8000`);
     });
 });
+
 
