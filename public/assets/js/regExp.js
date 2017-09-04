@@ -80,6 +80,7 @@ $(document).ready(function () {
 });
 
 
+
 //REGISTRATION
 $(document).ready(function () {
 
@@ -91,6 +92,33 @@ $(document).ready(function () {
         for (let i = 0; i < formElements.length; i++) {
 
             let nameRegExp = /[A-zА-яЁё]/;
+
+            //FirstName
+            // if (formElements[i].name === 'firstName') {
+            //     if (formElements[i].value === "") {
+            //         $(".error-box").css('display', 'block');
+            //         if ( $(".error-box").css('display', 'block')) {
+            //             $(".error-box").html('Required field')
+            //         }
+            //
+            //     }
+            //     if (formElements[i].value !== "") {
+            //         if (nameRegExp.test(document.getElementById("registerFirstName").value)) {
+            //
+            //             $(".error-box").html('');
+            //             $("error-box").css('display', 'none');
+            //
+            //         } else if (!nameRegExp.test(document.getElementById("registerFirstName").value || formElements[i].value)) {
+            //
+            //             $(".error-box").css('display', 'block');
+            //
+            //             if ($(".error-box").css('display', 'block')) {
+            //                 $(".error-box").html('use only uppercase and lowercase letters');
+            //             }
+            //
+            //         }
+            //     }
+            // }
 
             //FirstName
             if (formElements[i].name == 'firstName') {
@@ -146,6 +174,7 @@ $(document).ready(function () {
                 }
             }
 
+
             //User name
             let userNameRegExp = /^[a-z][a-z0-9]*?([-_][a-z0-9]+){0,2}$/i;
 
@@ -175,6 +204,10 @@ $(document).ready(function () {
                     }
                 }
             }
+
+
+
+
 
             //Email
             let EmailRegExp =/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -286,6 +319,46 @@ $(document).ready(function () {
 
 });
 
+        $('form#form_register').submit(function(e){
+
+            e.preventDefault();
+
+            $.ajax({
+                url: 'api/user',
+                type: 'post',
+                data: $(this).serialize(), // .serialize()сразу возвращает сгенерированную строку с именами и значениями выбранных элементов формы.
+
+                beforeSend: function(){
+                    $('form#form_register :input').attr('disabled','disabled');
+                },
+
+                success: function(response){
+                    $('form#form_register :input').removeAttr('disabled');
+
+                    alert(response);
+                }
+                //         success: function(data) {
+                //             $('#results').html(data);
+                //         },
+                //         error:  function(xhr, str){
+                //             alert('Возникла ошибка: ' + xhr.responseCode);
+                //         }
+            });
+
+
+    });
+
+
+
+
+
+
+
+
+
+
+
+
 
 //NEWSLETTER
 $(document).ready(function () {
@@ -390,6 +463,8 @@ $(document).ready(function () {
     });
 
 });
+
+
 
 
 
