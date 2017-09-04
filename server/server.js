@@ -102,7 +102,7 @@ app.get('/shop/:category/:subcategory/filters', (req, res) => {
 
 
 //
-app.get('/shop/:category/:subcategory/:id', (req, res) => {
+app.get('/:category/:subcategory/:id', (req, res) => {
     let itemData = {
         category: req.params.category,
         subcategory: req.params.subcategory,
@@ -246,6 +246,10 @@ app.use(function (req, res) {
         res.sendfile(path.join(__dirname, '../public/assets/pages', 'login.html'));
     } else if (req.url === '/bascket') {
         res.sendfile(path.join(__dirname, '../public/assets/pages', 'bascket.html'));
+    } else if (req.url === '/about') {
+        res.sendfile(path.join(__dirname, '../public/assets/pages', 'about.html'));
+    } else if (req.url === '/contact') {
+        res.sendfile(path.join(__dirname, '../public/assets/pages', 'contact.html'));
     }
 });
 

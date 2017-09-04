@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="../../node_modules/font-awesome/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
-    <script src="../../node_modules/jquery/dist/jquery.js"></script>
-    <script src="../../assets/autocomplete/jquery.easy-autocomplete.js"></script>
 </head>
 <body>
 <div class="header">
@@ -106,7 +104,7 @@
                         <span></span><a href="/login">Log In</a>
                     </li>
                     <li>
-                        <span class="bascket"></span><a href="../../assets/pages/bascket.html">Basket(0)</a>
+                        <span class="bascket"></span><a href="/bascket">Basket(0)</a>
                     </li>
                 </ul>
             </div>
@@ -123,32 +121,25 @@
                     <li><a href="/{{this.[0].category}}/{{this.[0].subcategory}}"> {{this.[0].subcategory}}</a></li>
                 </ul>
             </div>
-
-
             <div class="page_single">
                 <div class="row">
                     <div class="col-md-12">
-
                         <div class="col-md-7">
                             <div class="left_single">
                                 <span class="demowrap"><img id="demo" src="{{this.[0].items.image}}"/></span>
                             </div>
                         </div>
-
                         <div class="col-md-5">
                             <div class="right_single">
                                 <div class="name_single">
                                     <h3 class="item_name">{{this.[0].items.title}}</h3>
                                 </div>
-
                                 <div class="article_single">
                                     <p class="article" data-id="12345">Article number: {{this.[0].items.id}}</p>
                                 </div>
-
                                 <div class="price_single">
                                     <h3 class="item_price">&euro; {{this.[0].items.price}}</h3>
                                 </div>
-
                                 <div class="color_single">
                                     <span class="span_single">Color</span>
                                     <ul class="color_single_list">
@@ -156,7 +147,6 @@
                                         </li>
                                     </ul>
                                 </div>
-
                                 <div class="size_single">
                                     <span class="span_single">Size</span>
                                     <ul class="size-list">
@@ -165,11 +155,9 @@
                                         {{/each}}
                                     </ul>
                                 </div>
-
                                 <div class="buy_single">
                                     <button class="add_item button_single btn btn-lg btn-primary" data-id="{{this.[0].items.id}}">Add to Basket</button>
                                 </div>
-
                                 <div class="tab_info">
                                     <ul class="nav nav-tabs">
                                         <li class="active" data-toggle="tab" href="#description">
@@ -330,9 +318,9 @@
             <div class="col-md-3 footer-col">
                 <h3 class="ft-title">Collection</h3>
                 <ul class="ft-list">
-                    <li><a href="../../assets/pages/women.html">Women</a></li>
-                    <li><a href="../../assets/pages/men.html">Men</a></li>
-                    <li><a href="../../assets/pages/new_arrivels.html">New Arrivals</a></li>
+                    <li><a href="/shop/women">Women</a></li>
+                    <li><a href="/shop/men">Men</a></li>
+                    <li><a href="/new-arrivels">New Arrivals</a></li>
                 </ul>
             </div>
             <div class="col-md-3 footer-col">
@@ -351,12 +339,11 @@
                     <li><a href="#">About us</a></li>
                     <li><a href="#">Shipping Metods</a></li>
                     <li><a href="#">Career</a></li>
-                    <li><a href="../../assets/pages/contact.html">Contact</a></li>
+                    <li><a href="/contact">Contact</a></li>
                 </ul>
             </div>
             <div class="col-md-3 foot-cl">
-                <p>Shoper is made with love in Warsaw,<br>2014 &copy; Template By
-                    <a href="http://w3layouts.com/">W3layouts</a></p>
+                <p><br>2014 &copy; Template By<a href="http://w3layouts.com/"></a></p>
             </div>
             <div class="clearfix"></div>
         </div>
