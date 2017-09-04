@@ -1,10 +1,10 @@
-input::-webkit-input-placeholder { /* для webkit браузеров */
+#name_order, #email_order, #phone_order::-webkit-input-placeholder { /* для webkit браузеров */
 	color: grey;
 	font-style: italic;
 	padding-left: 5px;
 }
 
-textarea::-webkit-input-placeholder { /* для webkit браузеров */
+#comment_order::-webkit-input-placeholder { /* для webkit браузеров */
 	color: grey;
 	font-style: italic;
 	padding-left: 5px;
@@ -63,14 +63,16 @@ body textarea:required:valid {
     display: none;
  }
 
-#cart_order input{
+#name_order,
+#email_order,
+#phone_order{
 	height: 30px;
 	width: 350px;
 	outline: none;
 	margin-bottom: 10px;
 }
 
-#cart_order textarea{
+#comment_order{
 	height: 100px;
 	width: 350px;
 	outline: none;
