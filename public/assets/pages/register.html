@@ -6,9 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="../../node_modules/font-awesome/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="../../assets/autocomplete/easy-autocomplete.css">
-    <script src="../../node_modules/jquery/dist/jquery.js"></script>
-    <script src="../../assets/autocomplete/jquery.easy-autocomplete.js"></script>
 </head>
 <body>
 <div class="header">
@@ -65,28 +62,7 @@
                                 </div>
                             </div>
                         </li>
-                        <li><a class="navig-a" href="../../assets/pages/new_arrivels.html">New Arrivels</a>
-                            <div class="dropdown-nav">
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <h3><a href="../../assets/pages/new_arrivels.html"></a></h3>
-                                        <a class="item" href="../../assets/pages/new_arrivels.html"><div class="img-men-new"></div></a>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <h3><a href="../../assets/pages/new_arrivels.html"></a></h3>
-                                        <a class="item" href="../../assets/pages/new_arrivels.html"><div class="img-women-new"></div></a>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <h3><a href="../../assets/pages/new_arrivels.html"></a></h3>
-                                        <a class="item" href="../../assets/pages/new_arrivels.html"><div class="img-men-new2"></div></a>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <h3><a href="../../assets/pages/new_arrivels.html"></a></h3>
-                                        <a class="item" href="../../assets/pages/new_arrivels.html"><div class="img-women-new2"></div></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
+                        <li><a class="navig-a" href="../../assets/pages/new_arrivels.html">New Arrivels</a></li>
                         <li><a class="navig-a" href="../../assets/pages/about.html">About</a></li>
                     </ul>
                 </div>
@@ -103,11 +79,11 @@
                             <div class="close" onclick="searchToggle(this, event);"></div>
                         </div>
                     </li>
-                    <li>
-                        <span></span><a href="../../assets/pages/login.html">Log In</a>
+                    <li class="log-in">
+                        <a href="../../assets/pages/login.html">Log In</a>
                     </li>
-                    <li>
-                        <span class="bascket"></span><a href="../../assets/pages/bascket.html">Basket(0)</a>
+                    <li class="basket">
+                        <a href="../../assets/pages/bascket.html">Basket(0)</a>
                     </li>
                 </ul>
             </div>
@@ -129,55 +105,53 @@
                 <p>Lorem ipsum dolor sit amet enim. Etiam ullamcorp uspendisse a pellentesque.</p>
             </div>
             <div class="register">
-                <form id="form_register" name="formRegister">
+                <form method="post" id="form_register" name="formRegister">
                     <div class="register-top-grid">
                         <h3>PERSONAL INFORMATION</h3>
                         <div>
-                            <span>First Name<label>*</label></span><span  id="errorFirstName"></span>
-                            <input id="registerFirstName" type="text">
+                            <span>First Name<label>*</label></span>
+                            <span class="error-box"  id="errorFirstName"></span>
+                            <input id="registerFirstName" type="text" name="firstName">
                         </div>
                         <div>
-                            <span>Last Name<label>*</label></span><span id="errorLastName"></span>
-                            <input id="registerLastName" type="text">
+                            <span>Last Name<label>*</label></span>
+                            <span class="error-box" id="errorLastName"></span>
+                            <input id="registerLastName" type="text" name="lastName">
                         </div>
                         <div>
-                            <span>Email Address<label>*</label></span><span  id="errorEmail"></span>
-                            <input id="registerEmail" type="text">
+                            <span>User Name<label>*</label></span>
+                            <span class="error-box" id="errorUserRegName"></span>
+                            <input id="registerUserName" type="text" name="userName">
+                        </div>
+                        <div>
+                            <span>Email Address<label>*</label></span>
+                            <span class="error-box"  id="errorEmail"></span>
+                            <input id="registerEmail" type="text" name="emailRegistration">
                         </div>
                         <div class="clearfix"></div>
                         <a class="news-letter" href="#">
-                            <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i>Sign Up
-                                for Newsletter</label>
+                            <!--<label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i>Sign Up-->
+                                <!--for Newsletter</label>-->
                         </a>
                     </div>
-                    <div class="register-bottom-grid"><span id="errorPass"></span>
+                    <div class="register-bottom-grid">
                         <h3>LOGIN INFORMATION</h3>
                         <div>
-                            <span>Password<label>*</label></span><span id="errorEmptyPass"></span>
-                            <input id="registerPass" type="password">
+                            <span>Password<label>*</label></span>
+                            <span class="error-box" id="errorPass"></span>
+                            <input id="registerPass" type="password" name="passRegistration">
                         </div>
                         <div>
-                            <span>Confirm Password<label>*</label></span><span id="errorPassConfirm"></span>
-                            <input id="registerConfirmPass" type="password">
+                            <span>Confirm Password<label>*</label></span>
+                            <span class="error-box" id="errorPassConfirm"></span>
+                            <input id="registerConfirmPass" type="password" name="confirmPassRegistration">
                         </div>
                     </div>
                     <div class="register-but">
-                        <!--<form>-->
                         <input id="btnRegister" type="submit" value="submit">
-                        <!--<div class="clearfix"></div>-->
-                        <!--</form>-->
                     </div>
                 </form>
                 <div class="clearfix"></div>
-                <!--<div class="register-but">-->
-                <!--<form>-->
-                <!--<input type="submit" value="submit">-->
-                <!--<div class="clearfix"></div>-->
-                <!--</form>-->
-                <!--</div>-->
-            </div>
-            <div class="look">
-                <h3>You May Also Like</h3>
             </div>
         </div>
     </section>
@@ -262,32 +236,33 @@
         </div>
     </div>
 </div>
+<script type="text/javascript" src="../../build/scripts.min.js"></script>
 <script>
     //autocomplete
+    $(document).ready(function () {
+        let options = {
+            url: "../../assets/data-json/data-autocomplete.json",
 
-    let options = {
-        url: "../../assets/data-json/data-autocomplete.json",
+            getValue: "text",
 
-        getValue: "text",
-
-        template: {
-            type: "links",
-            fields: {
-                link: "../../website-link"
-            }
-        },
-        list: {
-            match: {
-                enabled: true
+            template: {
+                type: "links",
+                fields: {
+                    link: "../../website-link"
+                }
             },
-            maxNumberOfElements: 4
-        }
+            list: {
+                match: {
+                    enabled: true
+                },
+                maxNumberOfElements: 4
+            }
 
-    };
+        };
 
-    $("#input-search").easyAutocomplete(options);
+        $("#input-search").easyAutocomplete(options);
+    })
 
 </script>
-<script type="text/javascript" src="../../build/scripts.min.js"></script>
 </body>
 </html>

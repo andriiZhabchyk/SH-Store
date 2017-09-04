@@ -1,6 +1,6 @@
 'use strict';
 
-class searchObj {
+class searchObject {
     constructor(minPrice, maxPrice, countries, brands, sizes) {
         this.minPrice = minPrice;
         this.maxPrice = maxPrice;
@@ -48,7 +48,7 @@ let getFilterData = () => {
     checkedValuesFilter(checkCountry, checkedCountries);
     checkedValuesFilter(checkSize, checkedSizes);
 
-    let search = new searchObj(amountMin, amountMax, checkedCountries, checkedBrand, checkedSizes);
+    let search = new searchObject(amountMin, amountMax, checkedCountries, checkedBrand, checkedSizes);
 
     getFilterItems(pathname, search);
 };
