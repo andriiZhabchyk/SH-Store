@@ -93,32 +93,6 @@ $(document).ready(function () {
 
             let nameRegExp = /[A-zА-яЁё]/;
 
-            //FirstName
-            // if (formElements[i].name === 'firstName') {
-            //     if (formElements[i].value === "") {
-            //         $(".error-box").css('display', 'block');
-            //         if ( $(".error-box").css('display', 'block')) {
-            //             $(".error-box").html('Required field')
-            //         }
-            //
-            //     }
-            //     if (formElements[i].value !== "") {
-            //         if (nameRegExp.test(document.getElementById("registerFirstName").value)) {
-            //
-            //             $(".error-box").html('');
-            //             $("error-box").css('display', 'none');
-            //
-            //         } else if (!nameRegExp.test(document.getElementById("registerFirstName").value || formElements[i].value)) {
-            //
-            //             $(".error-box").css('display', 'block');
-            //
-            //             if ($(".error-box").css('display', 'block')) {
-            //                 $(".error-box").html('use only uppercase and lowercase letters');
-            //             }
-            //
-            //         }
-            //     }
-            // }
 
             //FirstName
             if (formElements[i].name == 'firstName') {
@@ -176,7 +150,7 @@ $(document).ready(function () {
 
 
             //User name
-            let userNameRegExp = /^[a-z][a-z0-9]*?([-_][a-z0-9]+){0,2}$/i;
+            let userNameRegExp = /^[a-z][a-z0-9]*?([-_.][a-z0-9]+){0,2}$/i;
 
 
             if (formElements[i].name == 'userName') {
@@ -206,11 +180,8 @@ $(document).ready(function () {
             }
 
 
-
-
-
             //Email
-            let EmailRegExp =/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,5})+$/;
+            let EmailRegExp =/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
             if (formElements[i].name == 'emailRegistration') {
                 if (formElements[i].value === "") {
@@ -314,49 +285,121 @@ $(document).ready(function () {
         }
 
 
+
+
         event.preventDefault()
     });
 
 });
 
-        $('form#form_register').submit(function(e){
 
-            e.preventDefault();
 
-            $.ajax({
-                url: 'api/user',
-                type: 'post',
-                data: $(this).serialize(), // .serialize()сразу возвращает сгенерированную строку с именами и значениями выбранных элементов формы.
+//Order
+$(document).ready(function () {
 
-                beforeSend: function(){
-                    $('form#form_register :input').attr('disabled','disabled');
-                },
 
-                success: function(response){
-                    $('form#form_register :input').removeAttr('disabled');
+    $('#confirm_order').on('click', function () {
+        let formElements = document.forms.cartOrder.elements;
 
-                    alert(response);
+
+        for (let i = 0; i < formElements.length; i++) {
+
+            let nameRegExp = /[A-zА-яЁё]/;
+
+            //Name
+            if (formElements[i].name == 'name') {
+                if (formElements[i].value === "") {
+                    document.getElementById("errorOrderName").style.display = "block";
+                    if (document.getElementById("errorOrderName").style.display = "block") {
+                        document.getElementById("errorOrderName").innerHTML = 'Required field'
+                    }
+
                 }
-                //         success: function(data) {
-                //             $('#results').html(data);
-                //         },
-                //         error:  function(xhr, str){
-                //             alert('Возникла ошибка: ' + xhr.responseCode);
-                //         }
-            });
+                if (formElements[i].value !== "") {
+                    if (nameRegExp.test(document.getElementById("name_order").value)) {
+
+                        document.getElementById("errorOrderName").innerHTML = '';
+                        document.getElementById("errorOrderName").style.display = "none";
+
+                    } else if (!nameRegExp.test(document.getElementById("name_order").value || formElements[i].value)) {
+
+                        document.getElementById("errorOrderName").style.display = "block";
+
+                        if (document.getElementById("errorOrderName").style.display = "block") {
+                            document.getElementById("errorOrderName").innerHTML = 'enter only letters';
+                        }
+
+                    }
+                }
+            }
 
 
+            //Email
+            let EmailRegExp =/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+            if (formElements[i].name == 'email') {
+                if (formElements[i].value === "") {
+                    document.getElementById("errorOrderEmail").style.display = "block";
+                    if (document.getElementById("errorOrderEmail").style.display = "block") {
+                        document.getElementById("errorOrderEmail").innerHTML = 'Required field'
+                    }
+
+                }
+                if (formElements[i].value !== "") {
+                    if (EmailRegExp.test(document.getElementById("email_order").value)) {
+
+                        document.getElementById("errorOrderEmail").innerHTML = '';
+                        document.getElementById("errorOrderEmail").style.display = "none";
+
+                    } else if (!EmailRegExp.test(document.getElementById("email_order").value || formElements[i].value)) {
+
+                        document.getElementById("errorOrderEmail").style.display = "block";
+
+                        if (document.getElementById("errorOrderEmail").style.display = "block") {
+                            document.getElementById("errorOrderEmail").innerHTML = 'Enter correct email';
+                        }
+
+                    }
+                }
+            }
+
+            //Phone
+            let phoneRegExp =/^[\d]{1}\ \([\d]{3}\)\ [\d]{3}-[\d]{2}-[\d]{2}$/;
+
+            if (formElements[i].name == 'phone') {
+                if (formElements[i].value === "") {
+                    document.getElementById("errorOrderPhone").style.display = "block";
+                    if (document.getElementById("errorOrderPhone").style.display = "block") {
+                        document.getElementById("errorOrderPhone").innerHTML = 'Required field'
+                    }
+
+                }
+                if (formElements[i].value !== "") {
+                    if (phoneRegExp.test(document.getElementById("phone_order").value)) {
+
+                        document.getElementById("errorOrderPhone").innerHTML = '';
+                        document.getElementById("errorOrderPhone").style.display = "none";
+
+                    } else if (!phoneRegExp.test(document.getElementById("phone_order").value || formElements[i].value)) {
+
+                        document.getElementById("errorOrderPhone").style.display = "block";
+
+                        if (document.getElementById("errorOrderPhone").style.display = "block") {
+                            document.getElementById("errorOrderPhone").innerHTML = 'Enter correct phone';
+                        }
+
+                    }
+                }
+            }
+
+
+        }
+
+
+        event.preventDefault()
     });
 
-
-
-
-
-
-
-
-
-
+});
 
 
 
@@ -409,6 +452,8 @@ $(document).ready(function () {
     });
 
 });
+
+
 
 
 //CONTACT

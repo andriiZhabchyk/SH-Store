@@ -83,7 +83,7 @@ function deleteCartData(){
 }
 
 // Открываем корзину со списком добавленных товаров
-function openCart(e){
+function openCart(){
       var cartData = getCartData(),
           items,// вытаскиваем все данные корзины
        totalItems = '';
@@ -96,15 +96,15 @@ function openCart(e){
 
             for(var i = 0; i < cartData[items].length; i++){
                 totalItems += '<td>' + cartData[items][0] + '</td>';
-                totalItems += '<td>' + cartData[items][1] + '</td>';
+                totalItems += '<td>' + cartData[items][1].split(' ') + '</td>';
                 totalItems += '<td>' + '<button class="minusItem" id="minusItem" onclick="minusCartData()">-</button>'
                     + '<div class="count">' + cartData[items][2] + '</div>' + '<button class="plusItem" id="plusItem" onclick="plusCartData()">+</button>' + '</td>';
-                totalItems += '<td>' + '<div class="ammount"></div>' + '</td>';
+                totalItems += '<td>'  + '<div class = "ammount"' + (cartData[items][1] * cartData[items][2]) + '</div>' + '</td>';
                 totalItems += '<td><button class="deleteItem" id="deleteItem" onclick="deleteCartData()">X</button></td>';
                 break;
             }
 
-            console.log(cartData[items][1]);
+            console.log(cartData[items][1].split(' '));
             // totalItems += '<td>' + ' ' + '</td>';
             // totalItems += '<td><button class="deleteItem">X</button></td>';
             totalItems += '</tr>';}
