@@ -1,5 +1,3 @@
-/*const routes = require('./root/routes/routes');*/
-
 const express = require('express');
 const MongoClient = require('mongodb').MongoClient;
 const ObjectID = require('mongodb').ObjectID;
@@ -11,11 +9,32 @@ const mongoose = require('mongoose');
 const waterfall = require('async-waterfall');
 const fs = require('fs');
 const http = require('http');
+const MongoStore = require('connect-mongo')(express);
+const cookieParser = require('cookie-parser');
 
 let dBase;
 
 const app = express();
 
+mongoose.connect(db.url);
+
+app.use(cookieParser());
+app.use(express.session({
+    secret: "Aside Cat",
+    key: "sid",
+    cookie: {
+        "path": "/",
+        "httpOnly": true,
+        "maxAge": null
+    },
+    store: new MongoStore({
+        host: 'ds139122.mlab.com',
+        port: '39122',
+        db: 'session',
+        url: db.url
+    })
+}));
+app.use(express.bodyParser());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json())
 app.use(express.static(path.join(__dirname, '../public')));
@@ -30,28 +49,14 @@ app.get('/shop/:category', function root(req, res) {
         itemSubcategory: []
     };
 
-    /*waterfall([
-     function (callback) {
-     dBase.collection(`${category}`).find({category: category}, {items: {$slice: 4}}).toArray(callback);
-     },
-     function (items, callback) {
-     if(!items) {
-     callback(null, 'Not found!');
-     } else {
-     callback(null);
-     }
-     }
-     ], function (err, result) {
-     if (err) return next(err);
-     res.render('category.hbs', result);
-     });*/
-
     dBase.collection(`${category}`).find({category: category}, {items: {$slice: 4}}).toArray((err, item) => {
         if (err) {
             return res.send({'error': 'An error has occurred'});
         } else {
-            subcategory.itemSubcategory = item;
-            return res.render('category.hbs', subcategory);
+            if (item) {
+                subcategory.itemSubcategory = item;
+                return res.render('category.hbs', subcategory);
+            }
         }
     });
 });
@@ -78,31 +83,43 @@ app.get('/shop/:category/:subcategory/filters', (req, res) => {
         if (err) {
             res.send({'error': 'An error has occurred'});
         } else {
-            subcategory.sizes = sizes;
+            if (sizes) {
+                subcategory.sizes = sizes;
+                getBrands();
+            }
         }
     });
 
-    dBase.collection(category).distinct('items.brand', {subcategory: subcategories}, (err, brands) => {
-        if (err) {
-            res.send({'error': 'An error has occurred'});
-        } else {
-            subcategory.brands = brands;
-        }
-    });
+    let getBrands = () => {
+        dBase.collection(category).distinct('items.brand', {subcategory: subcategories}, (err, brands) => {
+            if (err) {
+                res.send({'error': 'An error has occurred'});
+            } else {
+                if (brands) {
+                    subcategory.brands = brands;
+                    getCountries();
+                }
+            }
+        });
+    };
 
-    dBase.collection(category).distinct('items.country', {subcategory: subcategories}, (err, country) => {
-        if (err) {
-            res.send({'error': 'An error has occurred'});
-        } else {
-            subcategory.country = country;
-            res.render('Filters.hbs', subcategory);
-        }
-    });
+    let getCountries = () => {
+        dBase.collection(category).distinct('items.country', {subcategory: subcategories}, (err, country) => {
+            if (err) {
+                res.send({'error': 'An error has occurred'});
+            } else {
+                if (country) {
+                    subcategory.country = country;
+                    res.render('Filters.hbs', subcategory);
+                }
+            }
+        });
+    };
 });
 
 
 //
-app.get('/:category/:subcategory/:id', (req, res) => {
+app.get('/show/:category/:id', (req, res) => {
     let itemData = {
         category: req.params.category,
         subcategory: req.params.subcategory,
@@ -110,9 +127,6 @@ app.get('/:category/:subcategory/:id', (req, res) => {
     };
 
     dBase.collection(itemData.category).aggregate(
-        {
-            $match: {subcategory: itemData.subcategory}
-        },
         {
             $unwind: '$items'
         },
@@ -236,7 +250,8 @@ app.post('/api/users', (req, res, next) => {
 
     ], function (err, user) {
         if (err) return next(err);
-        res.status(200).json("You are successful register!");
+        res.session.user = user._id;
+        res.status(200).send(user.userName);
     });
 });
 

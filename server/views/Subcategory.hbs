@@ -36,6 +36,10 @@
                                         <h3><a href="/shop/women/tops">TOPS</a></h3>
                                         <a class="item" href="/shop/women/tops"><div class="img-women-tops"></div></a>
                                     </div>
+                                    <div class="col-md-3">
+                                        <h3><a href="/shop/women/jeans">JEANS</a></h3>
+                                        <a class="item" href="/shop/women/jeans"><div class="img-women-jeans"></div></a>
+                                    </div>
                                 </div>
                             </div>
                         </li>
@@ -62,7 +66,7 @@
                                 </div>
                             </div>
                         </li>
-                        <li><a class="navig-a" href="#">Comming Soon</a></li>
+                        <li><a class="navig-a" href="/contact">Contact Us</a></li>
                         <li><a class="navig-a" href="/about">About</a></li>
                     </ul>
                 </div>
@@ -95,7 +99,7 @@
     <div class="pag-nav">
         <ul class="p-list">
             <li><a href="/">Home</a></li> |
-            <li>&nbsp;<a  href="/{{category}}">{{category}}</a></li> |
+            <li>&nbsp;<a  href="/shop/{{category}}">{{category}}</a></li> |
             <li class="act">&nbsp;{{subcategory}}</li>
         </ul>
     </div>
@@ -145,7 +149,10 @@
                         <label for="s1"></label>
                     </div>
                 </div>
-                <button id="submit_filter">Filter out</button>
+                <div class="filter-btn-container">
+                    <button id="submit_filter">Filter out</button>
+                    <button id="clear_filter">&#10008; Clear Filters</button>
+                </div>
             </div>
         </form>
     </div>
@@ -157,11 +164,11 @@
     <section id="main">
         <div class="content">
             <div class="coats">
-                <h3 class="c-head" id="item-info">{{subcategory}}</h3>
+                <h3 class="c-head" id="item-info">{{subcategory}} ({{items.length}})</h3>
                 <div class="coat-row" id="coat-row">
                     {{#each items}}
                         <div class="coat-column" data-id={{id}}>
-                            <a href="single.html">
+                            <a href="/show/{{../category}}/{{id}}">
                                 <img src={{image}} class="img-responsive" alt="">
                                 <div class="prod-desc">
                                     <h4 class="item_title">{{title}}</h4>
@@ -169,7 +176,7 @@
                                 </div>
                             </a>
                             <div class="mask">
-                                <div class="info" id="getItemInfo"><a href="/{{../category}}/{{../subcategory}}/{{id}}">View</a></div>
+                                <div class="info" id="getItemInfo"><a href="/show/{{../category}}/{{id}}">View</a></div>
                             </div>
                         </div>
                     {{/each}}
@@ -228,7 +235,6 @@
                 <ul class="ft-list">
                     <li><a href="/shop/women">Woman</a></li>
                     <li><a href="/shop/men">Men</a></li>
-                    <li><a href="/shop/newarrival">Comming Soon</a></li>
                 </ul>
             </div>
             <div class="col-md-3 footer-col">

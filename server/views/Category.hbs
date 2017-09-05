@@ -17,7 +17,7 @@
                 <div class="navig">
                     <ul>
                         <li>
-                            <a class="navig-a" href="#">Woman</a>
+                            <a class="navig-a" href="/shop/women">Woman</a>
                             <div class="dropdown-nav">
                                 <div class="row">
                                     <div class="col-md-3">
@@ -35,6 +35,10 @@
                                     <div class="col-md-3">
                                         <h3><a href="/shop/women/tops">TOPS</a></h3>
                                         <a class="item" href="/shop/women/tops"><div class="img-women-tops"></div></a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h3><a href="/shop/women/jeans">JEANS</a></h3>
+                                        <a class="item" href="/shop/women/jeans"><div class="img-women-jeans"></div></a>
                                     </div>
                                 </div>
                             </div>
@@ -62,7 +66,7 @@
                                 </div>
                             </div>
                         </li>
-                        <li><a class="navig-a" href="#">Comming Soon</a></li>
+                        <li><a class="navig-a" href="/contact">Contact Us</a></li>
                         <li><a class="navig-a" href="/about">About</a></li>
                     </ul>
                 </div>
@@ -80,7 +84,7 @@
                         </div>
                     </li>
                     <li>
-                        <span></span><a href="/login">Log In</a>
+                        <span></span><a href="/login">LogIn</a>
                     </li>
                     <li>
                         <span class="bascket"></span><a href="/bascket">Basket(0)</a>
@@ -103,18 +107,18 @@
             <div class="coats">
                 {{#each itemSubcategory}}
                     <h3 class="c-head">{{subcategory}}</h3>
-                    <small><a href="/{{category}}/{{subcategory}}">Show More</a></small>
+                    <small><a href="/shop/{{category}}/{{subcategory}}">Show More</a></small>
                     <div class="coat-row" id="coats">
                         {{#each items}}
                             <div class="coat-column" data-id={{id}} >
-                                <a href="single.html">
+                                <a href="/show/{{../category}}/{{id}}">
                                     <img src={{image}} class="img-responsive" alt="">
                                     <div class="prod-desc"><h4>{{title}}</h4>
                                         <small>&euro; {{price}}</small>
                                     </div>
                                 </a>
                                 <div class="mask">
-                                    <div class="info"><a href="{{../category}}/{{../subcategory}}/{{id}}">View</a></div>
+                                    <div class="info"><a href="/show/{{../category}}/{{id}}">View</a></div>
                                 </div>
                             </div>
                         {{/each}}
@@ -174,7 +178,6 @@
                 <ul class="ft-list">
                     <li><a href="/shop/women">Women</a></li>
                     <li><a href="/shop/men">Men</a></li>
-                    <li><a href="#">Comming Soon</a></li>
                 </ul>
             </div>
             <div class="col-md-3 footer-col">
