@@ -83,8 +83,12 @@
                             <div class="close" onclick="searchToggle(this, event);"></div>
                         </div>
                     </li>
-                    <li>
-                        <span></span><a href="/login">Log In</a>
+                    <li class="log-in">
+                        <a href="/login" class="login">Log In</a>
+                        <div class="userInfo">
+                            <span class="userName">arni</span> <br>
+                            <span class="logout"> [Logout]</span>
+                        </div>
                     </li>
                     <li>
                         <span class="bascket"></span><a href="/bascket">Basket(0)</a>
@@ -100,13 +104,27 @@
         <div class="content">
             <div class="pag-nav">
                 <ul class="p-list">
-                    <li><a href="/">Home</a></li>
+                    <li><a href="/">Home</a></li> |
                     <li class="act">&nbsp;Login</li>
                 </ul>
             </div>
             <div class="coats">
                 <h3 class="c-head">Login</h3>
                 <p>Lorem ipsum dolor sit amet enim. Etiam ullamcorp uspendisse a pellentesque.</p>
+                <div id="alert-container" class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="alert alert-success alert-dismissible text-center">
+                                <button class="close" data-dismiss="alert">X</button>
+                                <p>Congratulations! Your registration completed successfully.</p>
+                            </div>
+                            <div class="alert alert-danger alert-dismissible text-center">
+                                <button class="close" data-dismiss="alert">X</button>
+                                <p>User with this login has already register</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="contact-box login-box">
                 <form method="post" id="form_login" name="formLogin">
@@ -137,7 +155,7 @@
                 <h3 class="c-head">For New People</h3>
                 <p>Lorem ipsum dolor sit amet enim. Etiam ullamcorp uspendisse a pellentesque.</p>
                 <div class="reg">
-                    <a href="register.html">
+                    <a href="/register">
                         Register Here
                     </a>
                 </div>

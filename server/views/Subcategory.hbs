@@ -84,7 +84,11 @@
                         </div>
                     </li>
                     <li class="log-in">
-                        <a class="navig-a" href="/login">Log In</a>
+                        <a href="/login" class="login">Log In</a>
+                        <div class="userInfo">
+                            <span class="userName">arni</span> <br>
+                            <span class="logout"> [Logout]</span>
+                        </div>
                     </li>
                     <li>
                         <a class="navig-a" href="/bascket">Basket(0)</a>
@@ -163,9 +167,9 @@
 <div class="container">
     <section id="main">
         <div class="content">
-            <div class="coats">
+            <div class="coats" id="coat-row">
                 <h3 class="c-head" id="item-info">{{subcategory}} ({{items.length}})</h3>
-                <div class="coat-row" id="coat-row">
+                <div class="coat-row">
                     {{#each items}}
                         <div class="coat-column" data-id={{id}}>
                             <a href="/show/{{../category}}/{{id}}">

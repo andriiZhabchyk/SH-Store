@@ -11,6 +11,7 @@ const fs = require('fs');
 const http = require('http');
 const MongoStore = require('connect-mongo')(express);
 const cookieParser = require('cookie-parser');
+const HttpError = require('httperror');
 
 let dBase;
 
@@ -28,10 +29,7 @@ app.use(express.session({
         "maxAge": null
     },
     store: new MongoStore({
-        host: 'ds139122.mlab.com',
-        port: '39122',
-        db: 'session',
-        url: db.url
+        mongooseConnection: mongoose.connection
     })
 }));
 app.use(express.bodyParser());
@@ -145,7 +143,6 @@ app.get('/show/:category/:id', (req, res) => {
                 return ({'error': 'An error has occurred'});
             } else {
                 item[0].category = itemData.category;
-                item[0].subcategory = itemData.subcategory;
                 console.log(item);
                 return res.render('single.hbs', item);
             }
@@ -212,9 +209,25 @@ app.post('/shop/:category/:subcategory/search?', (req, res) => {
         });
 });
 
+app.post('/comment/:category/:id', function (req, res) {
+    const category = req.params.category,
+        id = req.params.id;
+
+    const user = req.body.userName,
+        description = req.body.description;
+
+    dBase.collection(category).insert({'items.id': id}, {comments: {user: user, description: description}}, (err, comment) => {
+        if (err) {
+            return ({'error': 'An error has occurred'});
+        } else {
+            console.log(comment)
+            res.render('ItemComment.hbs', comment);
+        }
+    });
+});
 
 //register new user
-app.post('/api/users', (req, res, next) => {
+app.post('/api/users/register', (req, res, next) => {
     const firstName = req.body.firstName,
         lastName = req.body.lastName,
         userName = req.body.userName,
@@ -227,10 +240,8 @@ app.post('/api/users', (req, res, next) => {
         },
         function (user, callback) {
             if (user) {
-                if (user.password === password) {
-                    callback(null, "User with this email has already register!");
-                } else {
-                    next(new HttpError(403, "Wrong password"));
+                if (user.email === email) {
+                    callback(null, user, false);
                 }
             } else {
                 const user = {
@@ -243,16 +254,61 @@ app.post('/api/users', (req, res, next) => {
 
                 dBase.collection('users').insert(user, function (err) {
                     if (err) return next(err);
-                    callback(null, user)
+                    callback(null, user, true)
                 });
             }
         }
 
-    ], function (err, user) {
+    ], function (err, user, status) {
         if (err) return next(err);
-        res.session.user = user._id;
-        res.status(200).send(user.userName);
+
+        if (status === true) {
+            save_session(req, user._id);
+            res.status(200).send(user.userName);
+        } else res.status(417).json('User with this login has already register. Please, try again with another email..');
     });
+
+    function save_session(req, id) {
+        req.session.user = id;
+    }
+});
+
+app.post('/api/users/login', (req, res, next) => {
+    const userName = req.body.userName,
+        password = req.body.password;
+
+    waterfall([
+        function (callback) {
+            dBase.collection('users').findOne({userName: userName, password: password}, callback);
+        },
+        function (user, callback) {
+            if (user) {
+                callback(null, user, true);
+            } else {
+                callback(null, 'Wrong username or password! Please, Try again...', false);
+            }
+        }
+
+    ], function (err, result, status) {
+        if (err) return next(err);
+
+        if (status) {
+            save_session(req, result._id);
+            res.status(200).send(result.userName);
+        } else {
+            res.status(417).send(result);
+        }
+    });
+
+    function save_session(req, id) {
+        req.session.user = id;
+    }
+});
+
+//logout item user
+app.post('/logout', (req, res) => {
+    req.session.destroy();
+    res.redirect('/shop/women');
 });
 
 
@@ -265,6 +321,8 @@ app.use(function (req, res) {
         res.sendfile(path.join(__dirname, '../public/assets/pages', 'about.html'));
     } else if (req.url === '/contact') {
         res.sendfile(path.join(__dirname, '../public/assets/pages', 'contact.html'));
+    } else if (req.url === '/register') {
+        res.sendfile(path.join(__dirname, '../public/assets/pages', 'register.html'));
     }
 });
 

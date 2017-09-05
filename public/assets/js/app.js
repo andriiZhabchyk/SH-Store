@@ -10,21 +10,21 @@ class searchObject {
     }
 }
 
+//filter data
 let getPriceData = (min, max) => {
     $("#slider-range").slider({
         min: 5,
         max: 300,
         values: [1, 300],
         range: true,
-        slide: function( event, ui ) {
-            $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+        slide: function (event, ui) {
+            $("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
         }
     });
 
-    $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
-        " - $" + $( "#slider-range" ).slider( "values", 1 ) );
+    $("#amount").val("$" + $("#slider-range").slider("values", 0) +
+        " - $" + $("#slider-range").slider("values", 1));
 };
-
 
 
 $('#filter_form').submit((e) => {
@@ -42,10 +42,10 @@ let getFilterData = () => {
         checkSize = $('.sizes');
 
     let checkedCountries = [],
-        checkedBrand =[],
+        checkedBrand = [],
         checkedSizes = [];
 
-    checkedValuesFilter (checkBrand, checkedBrand);
+    checkedValuesFilter(checkBrand, checkedBrand);
     checkedValuesFilter(checkCountry, checkedCountries);
     checkedValuesFilter(checkSize, checkedSizes);
 
@@ -74,8 +74,8 @@ let clearAllFilter = () => {
     $("#slider-range").slider("values", 0, 5);
     $("#slider-range").slider("values", 1, 300);
 
-    $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
-        " - $" + $( "#slider-range" ).slider( "values", 1 ) );
+    $("#amount").val("$" + $("#slider-range").slider("values", 0) +
+        " - $" + $("#slider-range").slider("values", 1));
 
     let checkCountry = $('.country'),
         checkBrand = $('.brands'),
@@ -95,3 +95,60 @@ let clearCheckboxFilterData = (itemFilter) => {
         }
     }
 };
+
+
+
+/*---- user info part  ----*/
+
+let showUserInfo = (userName) => {
+    $('.userInfo').css('display', 'block');
+    $('.login').css('display', 'none');
+
+    if (userName){
+        localStorage.setItem('userName', JSON.stringify(userName));
+    }
+};
+
+$(document).ready(() => {
+        ShowUserName();
+        commentsInput();
+    }
+);
+
+let ShowUserName = () => {
+    const userName = JSON.parse(localStorage.getItem('userName'));
+
+    if (userName) {
+        $('.userName').text(userName);
+        showUserInfo();
+    } else {
+        $('.login').css('display', 'block');
+        $('.userInfo').css('display', 'none');
+    }
+};
+
+$('.logout').on('click', () => {
+    localStorage.removeItem('userName');
+    logoutUser();
+    commentsInput();
+});
+
+let commentsInput = () => {
+    const userName = JSON.parse(localStorage.getItem('userName'));
+
+    if (userName) {
+        $('.loginBefore').css('display', 'none');
+        $('.comment-form').css('display', 'block');
+    } else {
+        $('.loginBefore').css('display', 'block');
+        $('.comment-form').css('display', 'none');
+    }
+};
+
+$('#commentSubmit').on('click', () => {
+    const description = $('#text_single').val(),
+        user = JSON.parse(localStorage.getItem('userName'));
+
+    saveNewComment(user, description);
+});
+

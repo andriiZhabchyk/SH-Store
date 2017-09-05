@@ -83,8 +83,12 @@
                             <div class="close" onclick="searchToggle(this, event);"></div>
                         </div>
                     </li>
-                    <li>
-                        <span></span><a href="/login">Log In</a>
+                    <li class="log-in">
+                        <a href="/login" class="login">Log In</a>
+                        <div class="userInfo">
+                            <span class="userName">arni</span> <br>
+                            <span class="logout"> [Logout]</span>
+                        </div>
                     </li>
                     <li>
                         <span class="bascket"></span><a href="/bascket">Basket(0)</a>
@@ -224,23 +228,27 @@
                                         </div>
                                         <div id="comments" class="tab-pane fade">
                                             <!-- Содержимое панели 3 -->
-
-                                            <div class="first_comment">
-                                                <div class="info_comment">
-                                                    <span>Leila Pit</span>
-                                                    <h5>22/08/17</h5>
+                                            {{#each this.[0].items.comments}}
+                                                <div class="first_comment">
+                                                    <div class="info_comment">
+                                                        <span>{{user}}</span>
+                                                        <h5>{{date}}</h5>
+                                                    </div>
+                                                    <div class="text_comment">
+                                                        <h4>{{description}}</h4>
+                                                    </div>
                                                 </div>
-                                                <div class="text_comment">
-                                                    <h4>Stylish and quality coat. I recommend!</h4>
-                                                </div>
-                                            </div>
-                                            <p>Your comment</p>
+                                            {{/each}}
+                                            <p>Comments</p>
                                             <div class="form_single">
-                                                <form id="formComment" class="form-group">
-                                                    <textarea name="comment" placeholder="Comment" id="text_single"></textarea>
-                                                    <br/>
-                                                    <input type="button" class="btn btn-success" id="commentSubmit" value="Add comment" onclick="addNewComment()">
-                                                </form>
+                                                <p class="loginBefore">Please, login before comments</p>
+                                                <div class="comment-form">
+                                                    <form id="formComment" class="form-group">
+                                                        <textarea name="comment" placeholder="Comment" id="text_single"></textarea>
+                                                        <br/>
+                                                        <input type="button" class="btn btn-success" id="commentSubmit" value="Add comment">
+                                                    </form>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

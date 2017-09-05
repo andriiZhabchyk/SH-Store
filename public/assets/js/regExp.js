@@ -2,6 +2,7 @@
 $(document).ready(function () {
 
     $('#btnLogin').on('click', function () {
+        console.log('1');
         let formElements = document.forms.formLogin.elements;
 
 
@@ -9,7 +10,7 @@ $(document).ready(function () {
 
 
             //USER NAME
-            let userNameRegExp = /^[a-z][a-z0-9]*?([-_][a-z0-9]+){0,2}$/i;
+            let userNameRegExp = /^[a-z][a-z0-9]*?([-_.][a-z0-9]+){0,2}$/i;
 
             if (formElements[i].name == 'userName') {
                 if (formElements[i].value === "") {
@@ -73,8 +74,8 @@ $(document).ready(function () {
 
 
         }
-
-        event.preventDefault()
+        event.preventDefault();
+        loginUser('#form_login', 'login');
     });
 
 });
@@ -284,10 +285,8 @@ $(document).ready(function () {
             }
         }
 
-
-
-
-        event.preventDefault()
+        event.preventDefault();
+        loginUser('#form_register', 'register');
     });
 
 });
@@ -296,8 +295,6 @@ $(document).ready(function () {
 
 //Order
 $(document).ready(function () {
-
-
     $('#confirm_order').on('click', function () {
         let formElements = document.forms.cartOrder.elements;
 

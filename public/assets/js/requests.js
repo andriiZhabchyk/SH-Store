@@ -26,4 +26,30 @@ let getFilterItems = (pathname, searchParam) => {
         });
 };
 
+let logoutUser = () => {
+    $.ajax({
+        url: '/logout',
+        type: 'post'
+    })
+        .done(() => {
+            location.assign('/');
+            ShowUserName();
+        });
+};
+
+let saveNewComment = (user, description) => {
+    let path = location.pathname;
+    path = path.split('/');
+
+
+    $.ajax({
+        url: `/comment/${path[2]}/${path[3]}`,
+        type: 'post',
+        data: {user: user, description: description}
+    })
+        .done((data) => {
+            console.log('OK');
+        });
+};
+
 

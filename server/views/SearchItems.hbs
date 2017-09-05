@@ -1,16 +1,20 @@
 <div>
-    {{#each items}}
-        <div class="coat-column" data-id={{id}}>
-            <a href="{{../subcategory}}/{{id}}">
-                <img src={{image}} class="img-responsive" alt="">
-                <div class="prod-desc">
-                    <h4 class="item_title">{{title}}</h4>
-                    <small class="item_price">&euro; {{price}}</small>
+    <h3 class="c-head" id="item-info">{{subcategory}} ({{items.length}})</h3>
+    <div class="coat-row" id="coat-row">
+        {{#each items}}
+            <div class="coat-column" data-id={{id}}>
+                <a href="/show/{{../category}}/{{id}}">
+                    <img src={{image}} class="img-responsive" alt="">
+                    <div class="prod-desc">
+                        <h4 class="item_title">{{title}}</h4>
+                        <small class="item_price">&euro; {{price}}</small>
+                    </div>
+                </a>
+                <div class="mask">
+                    <div class="info" id="getItemInfo"><a href="/show/{{../category}}/{{id}}">View</a></div>
                 </div>
-            </a>
-            <div class="mask">
-                <div class="info" id="getItemInfo"><a href="{{../subcategory}}/{{id}}">View</a></div>
             </div>
-        </div>
-    {{/each}}
+        {{/each}}
+        <div class="clearfix"></div>
+    </div>
 </div>

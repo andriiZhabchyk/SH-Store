@@ -1,40 +1,38 @@
-$('#form_register').submit(function(e){
+let loginUser = (form, path) => {
+    let itemForm = $(form),
+        data = {};
 
-    e.preventDefault();
-
-    let form = $(this);
+    if (path === 'register'){
+        data.firstName = $("#registerFirstName").val();
+        data.lastName = $("#registerLastName").val();
+        data.userName = $("#registerUserName").val();
+        data.email = $("#registerEmail").val();
+        data.password = $("#registerPass").val();
+    } else {
+        data.userName = $('#log_inUserName').val();
+        data.password = $('#log_inUserPassword').val();
+    };
 
     $.ajax({
-        url: 'api/users',
+        url: `api/users/${path}`,
         type: 'post',
-        data: {
-            firstName: $("#registerFirstName").val(),
-            lastName: $("#registerLastName").val(),
-            user: $("#registerUserName").val(),
-            email: $("#registerEmail").val(),
-            password: $("#registerPass").val()
-
-        },
+        data: data,
         // data: $(this).serialize(), // .serialize()сразу возвращает сгенерированную строку с именами и значениями выбранных элементов формы.
 
         statusCode: {
-            403: function () {
-                $('.alert-info').css('display', 'block');
-            },
+            417: function (data) {
+                $('.alert-danger > p').text(data.responseText);
+                $('.alert-danger').css('display', 'block');
+                itemForm.find('input[type="submit"]').removeAttr('disabled');
+            }
         },
         beforeSend: function(){
-            form.find('input[type="submit"]').attr('disabled', 'disabled');
-            // $('form#form_register :input').attr('disabled','disabled'); // сoбытиe дo oтпрaвки
+            itemForm.find('input[type="submit"]').attr('disabled', 'disabled');
         },
 
-        success: function(){
-            // $('form#form_register :input').removeAttr('disabled');
-            form.find('input[type="submit"]').prop('disabled', false);
-
-            $('.alert-success').css('display', 'block');
-        },
-
+        success: function(data){
+            location.assign('/');
+            showUserInfo(data);
+        }
     });
-
-
-});
+};
