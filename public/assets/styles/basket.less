@@ -10,17 +10,6 @@
 	padding-left: 5px;
 }
 
-body input:focus:required:invalid,
-body textarea:focus:required:invalid {
-	border:red 3px solid;
-
-}
-body input:required:valid,
-body textarea:required:valid {
-	border: orange 3px solid;
-
-}
-
 #data_order h4{
 	font-weight: 600;
 	font-style: italic;
@@ -42,15 +31,54 @@ body textarea:required:valid {
 	height: auto;
 }
 
+.shopping_list #minusItem{
+	background-color: rgba(255, 191, 0, 0.5);
+	outline: none;
+	border :1px solid darkorange;
+	border-radius: 2px;
+	padding: 0 6px 0;
+	margin-right: 5px;
+}
+
+.shopping_list #plusItem{
+	 background-color: rgba(255, 191, 0, 0.5);
+	 outline: none;
+	 border :1px solid darkorange;
+	 border-radius: 2px;
+	 padding: 0 5px 0;
+	margin-left: 5px;
+ }
+
+.shopping_list #deleteItem{
+	background-color: rgba( 255, 0, 0, 0.5);
+	outline: none;
+	border :1px solid orangered;
+	border-radius: 2px;
+	padding: 0 5px 0;
+    margin-left: 20px;
+	margin-top: 5px;
+}
+
+
 .shopping_list tr:first-child{
 	background-color: lightgrey;
 	width: 15%;
 	height: 30px;
 }
 
+.shopping_list tr{
+    margin-bottom: 15px;
+	text-align: center;
+}
+
+.shopping_list tr:first-child{
+	text-align: left;
+}
+
 .shopping_list th{
 	width: 15%;
 	height: 30px;
+	text-align: center;
 }
 
 #myModalLabel{
@@ -93,6 +121,7 @@ body textarea:required:valid {
 	border: none;
 	float: right;
 	margin-top: -30px;
+	margin-right: 60px;
 	width: 150px;
 	color: #fff;
 }
@@ -138,6 +167,7 @@ body textarea:required:valid {
 .deleteItem{
 	display: inline-block;
 }
+
 
 
 
