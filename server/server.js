@@ -216,12 +216,17 @@ app.post('/comment/:category/:id', function (req, res) {
     const user = req.body.userName,
         description = req.body.description;
 
-    dBase.collection(category).insert({'items.id': id}, {comments: {user: user, description: description}}, (err, comment) => {
+    let comment = {
+        user: user,
+        description: description
+    };
+
+    dBase.collection(category).update({'items.id': id}, {$set: {$push: {comments: comment}}}, (err, result) => {
         if (err) {
             return ({'error': 'An error has occurred'});
         } else {
-            console.log(comment)
-            res.render('ItemComment.hbs', comment);
+            console.log(result);
+            res.render('ItemComment.hbs', result);
         }
     });
 });

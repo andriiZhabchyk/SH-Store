@@ -23,11 +23,7 @@ let loginUser = (form, path) => {
             417: function (data) {
                 $('.alert-danger > p').text(data.responseText);
                 $('.alert-danger').css('display', 'block');
-                itemForm.find('input[type="submit"]').removeAttr('disabled');
             }
-        },
-        beforeSend: function(){
-            itemForm.find('input[type="submit"]').attr('disabled', 'disabled');
         },
 
         success: function(data){
